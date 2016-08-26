@@ -57,23 +57,19 @@ Postman can be downloaded from: https://www.getpostman.com/
 |-------------------------------------------------------------------------------------------------------------------------------|---------      |
 | [Appendix 1 - Creating Composite APIs](./Appendix/Appendix%201%20-%20Creating%20Composite%20APIs)                             | 60 mins       |
 | [Appendix 2 - Securing APIs (OAuth)](./Appendix/Appendix%202%20-%20Securing%20APIs%20(OAuth))                                             | 30 mins   |
-| [Appendix 3 - Monitoring APIs](./Appendix/Appendix%203%20-%20Monitoring%20APIs)                                                               | 30 mins       |
-| [Appendix 4 - Microgateway](./Appendix/Appendix%204%20-%20Microgateway)                                                           | 60 mins   |
-| [Appendix 5 - Building APIs using Node](./Appendix/Appendix%205%20-%20Building%20APIs%20using%20Node.js)                              | 60 mins       |
-| [Appendix 6 - Build APIs from Web Services](./Appendix/Appendix%206%20-%20Build%20APIs%20from%20Web%20Services)               | 15 mins       |
 
 #####NOTE: Appendix items are optional.
 
 
 
 ######NOTE: You may need to whitelist the following URLs if you have strict internet usage policies:
-\*apigee.com/\*
-\*apigee.net/\*
-\*apistudio.io/\*
-\*github.com/\*
-\*usergrid.com/\*
-\*maps.googleapis.com/\*
-\*s3.amazonaws.com/\*
+*\*apigee.com/\*
+*\*apigee.net/\*
+*\*apistudio.io/\*
+*\*github.com/\*
+*\*usergrid.com/\*
+*\*maps.googleapis.com/\*
+*\*s3.amazonaws.com/\*
 
 
 
