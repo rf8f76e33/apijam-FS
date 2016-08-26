@@ -63,13 +63,13 @@ Postman can be downloaded from: https://www.getpostman.com/
 
 
 ######NOTE: You may need to whitelist the following URLs if you have strict internet usage policies:
-*\*apigee.com/\*
-*\*apigee.net/\*
-*\*apistudio.io/\*
-*\*github.com/\*
-*\*usergrid.com/\*
-*\*maps.googleapis.com/\*
-*\*s3.amazonaws.com/\*
+* \*apigee.com/\*
+* \*apigee.net/\*
+* \*apistudio.io/\*
+* \*github.com/\*
+* \*usergrid.com/\*
+* \*maps.googleapis.com/\*
+* \*s3.amazonaws.com/\*
 
 
 
