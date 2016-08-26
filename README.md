@@ -11,9 +11,9 @@ workshop, you’ll see how built­in mobile and social capabilities combine with
 power of Node.js to enable rapid development of modern apps.
 
 **In this workshop, you will:**
-● Build a high­ performance API out of an existing backend service using Apigee API Services
-● Gain end­to­end visibility across your APIs from the user all the way to your backend using Apigee Analytics Services
-● Understand how to quickly onboard developers and monetize your APIs using Apigee Developer Services
+* Build a high­ performance API out of an existing backend service using Apigee API Services
+* Gain end­to­end visibility across your APIs from the user all the way to your backend using Apigee Analytics Services
+* Understand how to quickly onboard developers and monetize your APIs using Apigee Developer Services
 
 
 This is the supporting material for a one-day hands-on workshop that introduces developers to  Apigee Edge. We call it a "DevJam".
@@ -67,13 +67,13 @@ Postman can be downloaded from: https://www.getpostman.com/
 
 
 ######NOTE: You may need to whitelist the following URLs if you have strict internet usage policies:
-*apigee.com/*
-*apigee.net/*
-*apistudio.io/*
-*github.com/*
-*usergrid.com/*
-*maps.googleapis.com/*
-*s3.amazonaws.com/*
+\*apigee.com/\*
+\*apigee.net/\*
+\*apistudio.io/\*
+\*github.com/\*
+\*usergrid.com/\*
+\*maps.googleapis.com/\*
+\*s3.amazonaws.com/\*
 
 
 
