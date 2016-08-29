@@ -58,9 +58,9 @@ created. Let's add a policy **-**
 
 1.  Go to the Apigee Edge Management UI browser tab
 
-2.  Go to the ‘{your_initials}\_hotel’ proxy’s ‘Develop’ tab
+2.  Go to the ‘{your_initials}\_payment’ proxy’s ‘Develop’ tab
 
-3.  Click on ‘Get Hotel by uuid’
+3.  Click on ‘Get Payment by uuid’
 
 4.  Click on “**+ Step**” on the Response Flow
 
@@ -147,9 +147,9 @@ you can run a few requests through.
 1.  Start a Trace session for the ‘{your_initials}_payments’ proxy
 
 2.  Send a ‘/GET payments’ request from Postman. This will return the list
-    of hotels from BaaS collection.
+    of payments from BaaS collection.
 
-3.  Copy the UUID of any hotel entity
+3.  Copy the UUID of any payment entity
 
 4.  Append that the copied UUID to the URL of ‘/GET payments’ request and
     send another request from Postman. 
