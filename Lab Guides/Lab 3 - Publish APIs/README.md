@@ -152,7 +152,7 @@ policy, that will no longer be the case.
 
 &nbsp;&nbsp;b.  Now that the API Key Verification policy has been added to the proxy, try and send a test ‘/GET payment’ request from Postman
 
-**Note**: Replace the URL of hotels API with **{your\_initials}**\_payment
+**Note**: Replace the URL of payment API with **{your\_initials}**\_payment
 
 &nbsp;&nbsp;c.  You will notice that the following fault is returned since an API Key has not been provided as a request query parameter:
 
@@ -290,7 +290,7 @@ Apps allow you to control who can access your APIs. You can revoke an app's key,
 
 &nbsp;&nbsp;b.  Now that the API Key Verification policy has been added to the proxy, try and send a test ‘/GET payment’ request from Postman
 
-> Note: Replace the URL of hotels API with **{your\_initials}**\_payment
+> Note: Replace the URL of payment API with **{your\_initials}**\_payment
 
 **Generate API Documentation**
 
@@ -323,8 +323,8 @@ templates*](http://apigee.com/docs/developer-services/content/using-smartdocs-do
 ![](./media/import-oas.png)
 
 &nbsp;&nbsp;a.  The API specification can be of Swagger 1.2, Swagger 2.0 (JSON or YAML) or WADL formats. In this example, we will use Swagger 2.0 – YAML.<br/>
-Open the **hotels-openapi.yaml** file from the lab material in a text editor and change the {baas_org} on line 14 to match your baas org and save the file.<br/>
-Back in the dev portal administrator, select the **hotels-openapi.yaml** file
+Save the **apigee-openapi.yaml** file from the lab material to a local drive.<br/>
+Back in the dev portal administrator, select the **apigee-openapi.yaml** file
 
 > ![](./media/import-oas-upload.png)
 
