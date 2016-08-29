@@ -561,7 +561,7 @@ APIKey QP” policy.
         -   Header:
             -   Authorization: Bearer {access_token}
 
-> ![](./media/image28.png)
+> ![](./media/postman-oauth.png)
 
 **Note**:
 
