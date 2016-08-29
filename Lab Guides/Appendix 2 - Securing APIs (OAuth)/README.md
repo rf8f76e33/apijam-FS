@@ -197,8 +197,8 @@ With the above brief introduction to API Products, Developers and
 Developer Apps, you will now create one of each to obtain a valid API
 Key that can be used to call your proxy
 
-NOTE : If you have already created a Product as part of the Lab 3, you
-can skip this step.
+**NOTE : If you have already created a Product as part of the Lab 3, you
+can skip this step.**
 
 1)  **Publishing an API Product**
 
@@ -209,20 +209,20 @@ can skip this step.
     c. In the ‘Product Details’ section of the new product screen,
     enter or select the following values for the various fields:
 
-        -   Display Name: {Your_Initials}_Hospitality Basic Product
-        -   Description: API Bundle for a basic Hospitality App.
+        -   Display Name: {Your_Initials} Financial Services Product
+        -   Description: API Bundle for a basic Financial Services App.
         -   Environment: Test
         -   Access: Public
         -   Key Approval Type: Automatic
-> ![](./media/image20.png)
+> ![](./media/new-product.png)
 
     d.  In the ‘Resources’ section select the following values for the
         various fields:
-        -   API Proxy: {your_initials}_hotels
+        -   API Proxy: {your_initials}_payments
         -   Revision: 1
         -   Resource Path: /
 
-> ![](./media/image21.png)
+> ![](./media/add-resource.png)
 
     e.  Click on ‘Import Resources’ to add the ‘/’ resource of your proxy to
         the API product
@@ -232,8 +232,8 @@ can skip this step.
     g. Click ‘Save’ to save the API Product. The new product should now be
        listed on the ‘Products’ page.
 
-NOTE : If you have already registered a Developer account as part of the
-lab-3, you can skip this step.
+**NOTE : If you have already registered a Developer account as part of the
+lab-3, you can skip this step.**
 
 2)  **Registering a Developer**
 
@@ -300,7 +300,7 @@ registering Developer Apps using the Apigee Edge Management UI.
     c. In the ‘Developer App Details’ section, enter or select
     the following values for the various fields:
 
-        -   Display Name: {Your_Initials}_iExplore App
+        -   Display Name: {Your_Initials} Financial Application
         -   Developer: {Your_name}
         -   Callback URL: Leave it blank
 
@@ -319,7 +319,7 @@ registering Developer Apps using the Apigee Edge Management UI.
     h. From the ‘Developer Apps’ page, select your App.
 
     i. In the ‘Products’ section, next to the entry for
-    ‘{Your_Initials}_Hospitality Basic Product,’ click ‘Show’ in
+    ‘{Your_Initials}_Financial Services Product,’ click ‘Show’ in
     the ‘Consumer Key’ and ‘Consumer Secret’ columns to display the generated keys
 
 **Note:** Since you selected ‘Key Approval Type: Automatic’ when you
@@ -383,12 +383,12 @@ and [authorizing requests using OAuth
 
     b.  Since you will be adding an OAuth v2.0 policy, the API Key
     Verification policy is no longer necessary. Delete the ‘Verify API Key’
-    policy from the ‘{your_initials}_hotels’ proxy default proxy endpoint preflow.
+    policy from the ‘{your_initials}_payments’ proxy default proxy endpoint preflow.
 
 > ![](./media/image24.png)
 
     c.  Using the “+Step” from the ‘Develop’ tab of the
-    ‘{your_initials}_hotels’ proxy, add the ‘OAuth v2.0’ policy with the following properties:
+    ‘{your_initials}_payments’ proxy, add the ‘OAuth v2.0’ policy with the following properties:
 
         -   Policy Display Name: Validate OAuth v2 Token
         -   Policy Name: Validate-OAuth-v2-Token
@@ -433,7 +433,7 @@ rather than delegating it to an external validator.
     f.  Removing the Authorization Header After Validating the OAuth Token
 
         i.  Using “+ Step” from the “Develop” tab of the
-            ‘{your_initials}_hotels’ proxy, add the ‘Assign Message’
+            ‘{your_initials}_payments’ proxy, add the ‘Assign Message’
             policy with the following properties on the Proxy End point,
             Request flow :
 
@@ -484,12 +484,11 @@ APIKey QP” policy.
 
     a.  Testing the OAuth 2.0 Token Validation Policy without a Token
 
-        i. Start a Trace session for the ‘{your_initials}_hotels’ proxy
+        i. Start a Trace session for the ‘{your_initials}_payments’ proxy
 
-        ii. Send a test ‘/GET hotels’ request from Postman with the following query parameters:
-         zipcode=98101&radius=200
+        ii. Send a test ‘/GET payments’ request from Postman
 
-        Note : Replace ‘hotels’ API proxy to point to {your_initials}_hotel
+        Note : Replace ‘payment’ API proxy to point to {your_initials}_payment
 
         iii.  As expected, a fault will be returned since a valid OAuth
         Token has not been provided as part of the request:
@@ -510,27 +509,27 @@ APIKey QP” policy.
         iv.  Review the Trace for the proxy and the returned response to ensure
         that the flow is working as expected.
 
-        v. Stop the Trace session for the ‘{your_initials}_hotels’ proxy
+        v. Stop the Trace session for the ‘{your_initials}_payments’ proxy
 
     b.  Testing the OAuth 2.0 Token Validation Policy with a Valid Token
 
         i.  You will obtain a valid oauth token by directly calling the
             ’oauth’ API proxy token endpoint and passing the consumer key
-            and consumer secret of the ‘{your_initials}_iExplore
+            and consumer secret of the ‘{your_initials}_Financial
             App’ app.
 
         ii. Send a test ‘/POST OAuth Token - Client Cred’ request from
             Postman after setting appropriate values in the
             ‘x-www-form-urlencoded’ section of the request:
-            -   client_id: {your_initials}_iExplore App Consumer Key**
-            -   client_secret: {your_initials}_iExplore App Consumer
+            -   client_id: {your_initials}_Financial App Consumer Key**
+            -   client_secret: {your_initials}_Financial App Consumer
                 Secret
             -   grant_type: client_credentials (this should be added as
                 query param)
 
 > ![](./media/image27.png)
 
-**Note**: Copy-paste the Consumer Key and Consumer Secret from the {your_initials}_iExplore App’s detail page. As you copy-paste, remove any spaces before and after the values of the Consumer Key and Consumer Secret.
+**Note**: Copy-paste the Consumer Key and Consumer Secret from the {your_initials}_Financial App’s detail page. As you copy-paste, remove any spaces before and after the values of the Consumer Key and Consumer Secret.
 
     c.  Review the response of the ‘/POST OAuth Token - Client
         Cred’ request. Copy the value of the ‘access_token’ attribute to
@@ -542,7 +541,7 @@ APIKey QP” policy.
   application_name: "ef723b8b-fdb1-4aae-9418-096d8ab7fec7",
   scope: "",
   status: "approved",
-  api_product_list: "[Hospitality]",
+  api_product_list: "[Financial App]",
   expires_in: "3599",
   developer.email: "your@email.id",
   organization_id: "0",
@@ -555,13 +554,9 @@ APIKey QP” policy.
   }
   ```
 
-    d.  Start a Trace session for the ‘{your_initials}_hotels’ proxy
+    d.  Start a Trace session for the ‘{your_initials}_payments’ proxy
 
-    e. Set up the ‘/GET hotels’ request in Postman with the following
-    query parameters AND header:
-        -   Query Parameters:
-            -   zipcode: 98101
-            -   radius: 200
+    e. Set up the ‘/GET payments’ request in Postman with the following header:
 
         -   Header:
             -   Authorization: Bearer {access_token}
@@ -570,7 +565,7 @@ APIKey QP” policy.
 
 **Note**:
 
-    -   Replace the API proxy URL with {your_initials}_hotels URL.
+    -   Replace the API proxy URL with {your_initials}_payments URL.
     -   Replace the {access_token} with the value of the ‘access_token’ from the response in the step above.
 
     Send the Postman request, and review the Trace for the proxy and the returned
