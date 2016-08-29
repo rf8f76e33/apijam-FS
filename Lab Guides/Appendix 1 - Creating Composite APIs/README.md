@@ -81,13 +81,13 @@ without screenshots unless a new concept is being introduced.
     API Proxy.
 
     a.  Now that you have an API Proxy configured with a couple of
-        resources, you will add logic to the ‘Find all Hotels’
+        resources, you will add logic to the ‘Get all payments’
         resource using policies.
 
 The goal is to have the proxy perform a geolocation query against our
-‘hotels’ BaaS data collection to return results within a certain
+‘payments’ BaaS data collection to return results within a certain
 radius of a zipcode (zipcode and radius both being query parameters
-provided when calling the ‘/v1/{your\_initials}\_hotels’ API).
+provided when calling the ‘/v1/{your\_initials}\_payment’ API).
 
 API BaaS supports the ability to retrieve entities within a specified
 distance of any geocoordinate based on its location property:
@@ -131,8 +131,7 @@ Now let’s implement the policies.
 
 1)  Switch to the ‘Develop’ tab of the API Proxy
 
-2)  From the ‘Navigator’ pane, select ‘Proxy Endpoints → Default → Find
-    all Hotels’
+2)  From the ‘Navigator’ pane, select ‘Proxy Endpoints → Default → getPayments’
 
 
 3)  **Use an Assign Message Policy** to prepare the service callout
@@ -445,9 +444,7 @@ the behavior of the flow to see if the results being returned from the
 API BaaS are as expected.
 
     a.  Click on the ‘Save’ button to save and deploy the changes to the
-        ‘{your_initials}_hotels’ API Proxy
-
-> ![](./media/image17.png)
+        ‘{your_initials}_payment’ API Proxy
 
     b.  Wait for the ‘Successfully saved API Proxy’ message to appear and
         verify that your proxy is deployed to the ‘test’ environment
@@ -455,7 +452,7 @@ API BaaS are as expected.
     c.  Go to the ‘Trace’ tab and start a trace session by clicking the
         ‘Start Trace Session’ button
 
-    d.  Use Postman to test the ‘/GET hotels’ request with the following
+    d.  Use Postman to test the ‘/GET payments’ request with the following
         query parameters combinations and review the results being
         returned
     -   zipcode=98101&radius=1000
@@ -464,7 +461,7 @@ API BaaS are as expected.
     -   No query parameters
 
 Note : Before invoking the API, change the URL to point your API i.e.
-{your_initials}_hotels.
+{your_initials}_payment.
 
 Notice that the responses being returned by the API BaaS for the
 various query parameter combinations are different as the
@@ -505,48 +502,44 @@ the location query variable, to create a customized response.
     c.  Add the following code to the ‘Create-Final-Response.js’ script:
 
       ```
-      var hotelsResponse = context.getVariable("response.content"),
+      var paymentsResponse = context.getVariable("response.content"),
       zipcode = context.getVariable("zipcode"),
       radius = context.getVariable("radius"),
       finalResponse = {};
 
-      // initialize hotels response
-      finalResponse.hotels = {};
-      // add queryparams used as part of the hotels response
-      finalResponse.hotels.queryparams = JSON.parse('{ ' + '"zipcode" : "' + zipcode + '", "radius" : "' + radius + '" }');
-      // add the hotels response
+      // initialize payments response
+      finalResponse.payments = {};
+      // add queryparams used as part of the payments response
+      finalResponse.payments.queryparams = JSON.parse('{ ' + '"zipcode" : "' + zipcode + '", "radius" : "' + radius + '" }');
 
-      if (hotelsResponse != null) {
-      var hotelsJSON = JSON.parse(hotelsResponse);
-      finalResponse.hotels.resultsMetadata = {};
+      // add the payments response
+      if (hpaymentsResponse != null) {
+      var paymentsJSON = JSON.parse(paymentsResponse);
+      finalResponse.payments.resultsMetadata = {};
 
       // set results count
-      finalResponse.hotels.resultsMetadata.count = 0;
-      if (hotelsJSON.count != null && hotelsJSON.count != "") {
-      finalResponse.hotels.resultsMetadata.count = hotelsJSON.count;
+      finalResponse.payments.resultsMetadata.count = 0;
+      if (paymentsJSON.count != null && paymentsJSON.count != "") {
+      finalResponse.payments.resultsMetadata.count = paymentsJSON.count;
       }
 
       // set current results cursor
-      if (hotelsJSON.params != null && hotelsJSON.params.cursor != null && hotelsJSON.params.cursor != "") {
-      finalResponse.hotels.resultsMetadata.currentCursor = hotelsJSON.params.cursor\[0\];
+      if (paymentsJSON.params != null && paymentsJSON.params.cursor != null && paymentsJSON.params.cursor != "") {
+      finalResponse.payments.resultsMetadata.currentCursor = paymentsJSON.params.cursor\[0\];
       }
 
       // set next results cursor
-      if (hotelsJSON.cursor != null && hotelsJSON.cursor != "") {
-      finalResponse.hotels.resultsMetadata.nextCursor = hotelsJSON.cursor;
+      if (paymentsJSON.cursor != null && paymentsJSON.cursor != "") {
+      finalResponse.payments.resultsMetadata.nextCursor = paymentsJSON.cursor;
       }
 
-      // set the list of hotels
-      finalResponse.hotels.entities = hotelsJSON.entities;
+      // set the list of payments
+      finalResponse.payments.entities = paymentsJSON.entities;
       }
 
       // update the response that will be returned to the client
       context.setVariable("response.content", JSON.stringify(finalResponse));
       ```
-
-  *(You can find the javascript file content*
-    [**here**](https://gist.github.com/prithpal/69c870bc5971d067fb8d)*.
-    Click the “Raw” button and copy/paste into your policy editor).*
 
     The above script creates a customized JSON response by merging
     information from the query parameters received in the original request
@@ -555,7 +548,7 @@ the location query variable, to create a customized response.
 
       ```
       {
-      “hotels” : {
+      “payments” : {
       “queryparams” : {
       “zipcode” : “zip code value”,
       “radius” : “radius value”
@@ -565,7 +558,7 @@ the location query variable, to create a customized response.
       “currentCursor” : “current cursor value”,
       “nextCursor” : “next cursor value”
       }
-      “entities” : \[Array of hotel entities\]
+      “entities” : \[Array of payment entities\]
       }
       }
       ```
