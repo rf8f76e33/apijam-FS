@@ -103,23 +103,23 @@ policy](http://apigee.com/docs/api-services/reference/verify-api-key-policy)[.](
 
 &nbsp;&nbsp;b.  Select ‘Assign Message’ policy with the following properties:
 
-&nbsp;&nbsp;&nbsp;&nbsp;i.  Policy Display Name: **Remove APIKey QP**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;ii. Policy Name: **Remove-APIKey-QP**
+&nbsp;&nbsp;&nbsp;&nbsp;i.  Policy Display Name: **Remove APIKey**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ii. Policy Name: **Remove-APIKey**
 
 > ![](./media/image58.png)
 
-&nbsp;&nbsp;c.  The ‘Remove APIKey QP’ policy will get added after the ‘Response Cache’ policy. **Drag and move** the ‘Remove APIKey QP’ policy to be before the ‘Response Cache’ policy
+&nbsp;&nbsp;c.  The ‘Remove APIKey’ policy will get added after the ‘Response Cache’ policy. **Drag and move** the ‘Remove APIKey’ policy to be before the ‘Response Cache’ policy
 
 ![](./media/image56.png)
 
 &nbsp;&nbsp;d.  **Save** the configuration
 
-&nbsp;&nbsp;e.  For the ‘Remove APIKey QP’ policy, change the XML configuration of the policy using the 'Code' panel as follows:
+&nbsp;&nbsp;e.  For the ‘Remove APIKey’ policy, change the XML configuration of the policy using the 'Code' panel as follows:
 
   ```
   <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-  <AssignMessage async="false" continueOnError="false" enabled="true" name="Remove-APIKey-QP">
-  <DisplayName>Remove APIKey QP</DisplayName>
+  <AssignMessage async="false" continueOnError="false" enabled="true" name="Remove-APIKey">
+  <DisplayName>Remove APIKey</DisplayName>
   <Remove>
   <QueryParams>
   <QueryParam name="apikey"></QueryParam>
@@ -134,7 +134,7 @@ policy](http://apigee.com/docs/api-services/reference/verify-api-key-policy)[.](
 [*here*](https://gist.github.com/prithpal/cbf66ee17b9afe75fdf2). Click
 the “Raw” button and copy/paste into your policy editor).
 
-As a security measure, the ‘Remove APIKey QP’ policy simply removes
+As a security measure, the ‘Remove APIKey’ policy simply removes
 the ‘apikey’ query parameter from the HTTP request message attached to
 the flow so it is not sent to the backend service. In this scenario we
 are removing the ‘apikey’ immediately after verify API Key policy, but
@@ -143,16 +143,16 @@ at a later stage in the flow.
 
 3)  **Testing the API Key Verification Policy**
 
-Until now anyone with the URL to the ‘{your\_initials}\_hotel’ API
+Until now anyone with the URL to the ‘{your\_initials}\_payment’ API
 Proxy has been able to make a request with appropriate parameters and
 get a response back. Now that you have added the API Key Verification
 policy, that will no longer be the case.
 
-&nbsp;&nbsp;a.  Start the Trace session for the ‘**{your\_initials}**\_hotels’ proxy
+&nbsp;&nbsp;a.  Start the Trace session for the ‘**{your\_initials}**\_payment’ proxy
 
-&nbsp;&nbsp;b.  Now that the API Key Verification policy has been added to the proxy, try and send a test ‘/GET hotels’ request from Postman with the following query parameters: **zipcode=98101&radius=200**
+&nbsp;&nbsp;b.  Now that the API Key Verification policy has been added to the proxy, try and send a test ‘/GET payment’ request from Postman
 
-**Note**: Replace the URL of hotels API with **{your\_initials}**\_hotels
+**Note**: Replace the URL of hotels API with **{your\_initials}**\_payment
 
 &nbsp;&nbsp;c.  You will notice that the following fault is returned since an API Key has not been provided as a request query parameter:
 
@@ -202,22 +202,22 @@ and generate keys:
 
 3)  In the ‘Product Details’ section of the new product screen, enter or select the following values for the various fields:
 
-&nbsp;&nbsp;a.  Display Name: **{Your_Initials}_Hospitality Basic Product**<br/>
-&nbsp;&nbsp;b.  Description: **API Bundle for a basic Hospitality App.**<br/>
+&nbsp;&nbsp;a.  Display Name: **{Your_Initials} Financial Services Product**<br/>
+&nbsp;&nbsp;b.  Description: **API Bundle for a basic financial app.**<br/>
 &nbsp;&nbsp;c.  Environment: **Test**<br/>
 &nbsp;&nbsp;d.  Access: **Public**<br/>
 &nbsp;&nbsp;e.  Key Approval Type: **Automatic**
 
-![](./media/image59.png)
+![](./media/new-product.png)
 
 4)  In the ‘Resources’ section select the following values for the
     various fields:
 
-&nbsp;&nbsp;a.  API Proxy: **{your\_initial}\_hotels **<br/>
+&nbsp;&nbsp;a.  API Proxy: **{your\_initial}\_payment **<br/>
 &nbsp;&nbsp;b.  Revision: **1**<br/>
 &nbsp;&nbsp;c.  Resource Path: **/**
 
-> ![](./media/image60.png)
+> ![](./media/add-resource.png)
 
 5)  Click on **‘Import Resources’** to add the **‘/’** resource of your proxy to the API product
 
@@ -234,7 +234,7 @@ As an API provider, you need a way to expose your APIs, educate
 developers about your APIs, sign up developers, and let developers
 register apps. Exposing your APIs to developers is only part of creating a truly dynamic community. You also need a way for your developer community to provide feedback, make support and feature requests, and submit their own content that can be accessed by other developers.
 
-![](./media/image61.png)
+![](./media/portal-home.png)
 
 **Developers**
 
@@ -244,11 +244,9 @@ Developers access your APIs through apps. When the developer registers an app, t
 
 1)  Ask your instructor for the URL for the developer portal. On the developer portal home page select **Register**
 
-> ![](./media/image62.png)
-
 2)  The registration page appears
 
-> ![](./media/image63.png)
+> ![](./media/portal-register.png)
 
 3)  Enter the required information and select **Create new account**. Depending on the new account registration settings, when the new account is created, you could be sent an automated welcome email.
 
@@ -269,30 +267,30 @@ Apps allow you to control who can access your APIs. You can revoke an app's key,
 
 4)  Select **My apps** below your username in the login menu
 
-> ![](./media/image66.png)
+> ![](./media/myapps.png)
 
 5)  Click the **+ Add a** **new App** icon.
 
-> ![](./media/image39.png)
+> ![](./media/add-app.png)
 
 6)  Enter details for the application and hit **Create App**
 
-> ![](./media/image40.png)
+> ![](./media/add-app-form.png)
 
 > NOTE: Select the product that you created in the previous step.
 
 7)  Open your new app to view the Consumer Key (aka API Key) and Consumer Secret (aka
     API Secret)
 
-> ![](./media/image41.png)
+> ![](./media/app-created.png)
 
 8)  Test the API
 
-&nbsp;&nbsp;a.  Start the Trace session for the ‘**{your\_initials}\_hotels**’ proxy
+&nbsp;&nbsp;a.  Start the Trace session for the ‘**{your\_initials}\_payment**’ proxy
 
-&nbsp;&nbsp;b.  Now that the API Key Verification policy has been added to the proxy, try and send a test ‘/GET hotels’ request from Postman with the following query parameters: **zipcode=98101&radius=200&apikey={apikey from the dev portal}**
+&nbsp;&nbsp;b.  Now that the API Key Verification policy has been added to the proxy, try and send a test ‘/GET payment’ request from Postman
 
-> Note: Replace the URL of hotels API with **{your\_initials}**\_hotel
+> Note: Replace the URL of hotels API with **{your\_initials}**\_payment
 
 **Generate API Documentation**
 
@@ -316,41 +314,41 @@ templates*](http://apigee.com/docs/developer-services/content/using-smartdocs-do
 &nbsp;&nbsp;&nbsp;&nbsp;- **Internal name**: As you type the **Name**, the internal name displays. The internal name for the model that must be unique among all models.  The internal name must contain only lowercase letters, numbers, and hyphens with no spaces. Select **Edit** to edit this name.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;- **Description**: A description of the model.
 
-> ![](./media/image43.png)
+> ![](./media/add-model.png)
 
 2)  Select **Create Model**.
 
 3)  Click on ‘Import’ to import an API specification
 
-![](./media/image44.png)
+![](./media/import-oas.png)
 
 &nbsp;&nbsp;a.  The API specification can be of Swagger 1.2, Swagger 2.0 (JSON or YAML) or WADL formats. In this example, we will use Swagger 2.0 – YAML.<br/>
 Open the **hotels-openapi.yaml** file from the lab material in a text editor and change the {baas_org} on line 14 to match your baas org and save the file.<br/>
 Back in the dev portal administrator, select the **hotels-openapi.yaml** file
 
-> ![](./media/image45.png)
+> ![](./media/import-oas-upload.png)
 
 &nbsp;&nbsp;b.  Click on ‘**Import’**
 
 &nbsp;&nbsp;c.  Select all the Operations//Methods that should be published (we will select all)
 
-> ![](./media/image33.png)
+> ![](./media/unpublished-model.png)
 
 &nbsp;&nbsp;d.  Click on ‘**Update**’
 
 &nbsp;&nbsp;e.  Click on ‘View API Documentation’ to see the published documentation
 
-> ![](./media/image34.png)
+> ![](./media/published-model.png)
 
-&nbsp;&nbsp;f.  Click on ‘**hotels-get**’
+&nbsp;&nbsp;f.  Click on ‘**getPayments**’
 
-> ![](./media/image35.png)
+> ![](./media/api-documentation.png)
 
-&nbsp;&nbsp;g.  Enter ‘**application/json**’ as the Content-Type. Leave the radius and zipcode empty
+&nbsp;&nbsp;g.  Set ‘**application/json**’ as the Content-Type.
 
 &nbsp;&nbsp;h.  Click on ‘**Send this request**’
 
-> ![](./media/image36.png)
+> ![](./media/getPayments.png)
 
 **Summary**
 

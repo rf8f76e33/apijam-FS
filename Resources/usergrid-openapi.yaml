@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   description: 'This is a sample payments service.  You can find out more about OpenAPI spec at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).'
   version: 1.0.0
-  title: Payments API
+  title: Payments
   contact:
     name: Apigee
     url: 'https://pages.apigee.com/request-support-general.html'
@@ -27,7 +27,9 @@ schemes:
 paths:
   '/payment/{payment-uuid}':
     get:
-      description: Get one `payment` with given id.
+      summary: Get payment by uuid
+      description: This method will get a payment
+      operationId: getPaymentById
       parameters:
         - name: payment-uuid
           in: path
@@ -48,7 +50,9 @@ paths:
         '404':
           $ref: '#/responses/404'
     put:
-      description: Update a `payment` with given id.
+      summary: Update payment by uuid
+      description: This method will update a payment
+      operationId: updatePaymentById
       parameters:
         - name: body
           description: A new `payment`
@@ -66,7 +70,9 @@ paths:
           schema:
             $ref: '#/definitions/payment'
     delete:
-      description: Delete a `payment` with given id.
+      summary: Delete payment by uuid
+      description: This method will delete a payment
+      operationId: deletePaymentById
       parameters:
         - name: payment-uuid
           in: path
@@ -76,9 +82,11 @@ paths:
       responses:
         '200':
           description: OK
-  /payments:
+  /payment:
     post:
-      description: Make a new `payment`.
+      summary: Make a payment
+      description: This method will make a payment
+      operationId: makePayment
       parameters:
         - name: body
           description: A new `payment`
@@ -91,7 +99,9 @@ paths:
           schema:
             $ref: '#/definitions/payment'
     get:
-      description: Get all `payment`.
+      summary: Get all payments
+      description: This method will reteive all payments
+      operationId: getPayments
       responses:
         '200':
           description: OK
