@@ -455,10 +455,7 @@ API BaaS are as expected.
     d.  Use Postman to test the ‘/GET payments’ request with the following
         query parameters combinations and review the results being
         returned
-    -   zipcode=98101&radius=1000
-    -   zipcode=98101&radius=200
-    -   zipcode=94105&radius=400
-    -   No query parameters
+    -   zipcode=30004&radius=100
 
 Note : Before invoking the API, change the URL to point your API i.e.
 {your_initials}_payment.
@@ -501,7 +498,7 @@ the location query variable, to create a customized response.
 
     c.  Add the following code to the ‘Create-Final-Response.js’ script:
 
-      ```
+      
       var paymentsResponse = context.getVariable("response.content"),
       zipcode = context.getVariable("zipcode"),
       radius = context.getVariable("radius"),
@@ -513,7 +510,7 @@ the location query variable, to create a customized response.
       finalResponse.payments.queryparams = JSON.parse('{ ' + '"zipcode" : "' + zipcode + '", "radius" : "' + radius + '" }');
 
       // add the payments response
-      if (hpaymentsResponse != null) {
+      if (paymentsResponse != null) {
       var paymentsJSON = JSON.parse(paymentsResponse);
       finalResponse.payments.resultsMetadata = {};
 
@@ -525,7 +522,7 @@ the location query variable, to create a customized response.
 
       // set current results cursor
       if (paymentsJSON.params != null && paymentsJSON.params.cursor != null && paymentsJSON.params.cursor != "") {
-      finalResponse.payments.resultsMetadata.currentCursor = paymentsJSON.params.cursor\[0\];
+      finalResponse.payments.resultsMetadata.currentCursor = paymentsJSON.params.cursor[0];
       }
 
       // set next results cursor
@@ -539,7 +536,7 @@ the location query variable, to create a customized response.
 
       // update the response that will be returned to the client
       context.setVariable("response.content", JSON.stringify(finalResponse));
-      ```
+    
 
     The above script creates a customized JSON response by merging
     information from the query parameters received in the original request
