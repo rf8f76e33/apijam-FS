@@ -64,7 +64,7 @@ with mediation and extensibility policies in this lesson.
 
 By the end of this lesson, you will have enhanced your proxy to accept a
 ‘zipcode’ and a ‘radius’ (in meters) query parameter, use those
-parameters to return a list of hotels that match the criteria, and
+parameters to return a list of payments that match the criteria, and
 format the results to filter out some metadata from the BaaS result.
 
 **Note**: Now that you are familiar with the Apigee Edge Management UI
@@ -433,7 +433,7 @@ as part of the ‘context’ object.
     changes**
 
 All the policies depicted in the diagram earlier in this lesson for
-the request flow have been implemented. Your ‘Get Hotels’ Proxy should
+the request flow have been implemented. Your ‘Get Payments’ Proxy should
 look as follows:
 
 > ![](./media/image16.png)
@@ -465,7 +465,7 @@ Note : Before invoking the API, change the URL to point your API i.e.
 
 Notice that the responses being returned by the API BaaS for the
 various query parameter combinations are different as the
-location-based query finds hotels that match the criteria.
+location-based query finds payments that match the criteria.
 
     f.  Switch back to the ‘Trace’ tab in the Apigee Edge Management UI.
         Review the executed policies and associated headers & variable
@@ -490,7 +490,7 @@ a simple Javascript policy, similar to the one used before to create
 the location query variable, to create a customized response.
 
     a.  Go to the ‘Develop’ tab of your proxy in the Apigee Edge
-        Management UI, and add a new policy to the response of the Find All Hotels flow.
+        Management UI, and add a new policy to the response of the Find All Payments flow.
 
     b.  From the ‘New Policy’ drop-down, select the ‘Javascript’ policy and
         add it with the following properties:
