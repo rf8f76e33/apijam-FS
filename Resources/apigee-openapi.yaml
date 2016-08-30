@@ -17,10 +17,8 @@ tags:
     description: API enabling payment services
 consumes:
   - application/json
-  - application/xml
 produces:
   - application/json
-  - application/xml
 schemes:
   - http
   - https

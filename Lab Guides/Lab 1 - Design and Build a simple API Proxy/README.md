@@ -66,9 +66,9 @@ For the purposes of illustration, we've created a specification describing an AP
 
 **Estimated Time: 6 minutes**
 
-1. Review the OpenAPI specification [document for the fictitious hotels service]
-(http://playground.apistudio.io/9dd084db-7136-460e-8fe8-bde4ecafdc93/#/)  
-http://playground.apistudio.io/9dd084db-7136-460e-8fe8-bde4ecafdc93/#/
+1. Review the OpenAPI specification [document for the fictitious payments service]
+(http://playground.apistudio.io/1aea212e-c530-4c4b-b839-cd15e4a6ddcd/)  
+http://playground.apistudio.io/1aea212e-c530-4c4b-b839-cd15e4a6ddcd/
 ![](./media/apistudio.png)
 
 2. On the right side of the editor, in the documentation view, scroll

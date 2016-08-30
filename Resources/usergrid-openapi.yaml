@@ -11,16 +11,14 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 host: api.usergrid.com
-basePath: /everydaybank/mobileapp
+basePath: /apickelsimer1/finance
 tags:
   - name: payments
     description: API enabling payment services
 consumes:
   - application/json
-  - application/xml
 produces:
   - application/json
-  - application/xml
 schemes:
   - http
   - https
@@ -124,12 +122,21 @@ definitions:
       account_uuid:
         type: string
       amount:
-        type: number
+        type: string
       metadata:
         type: object
         properties:
           path:
             type: string
+      sourceType:
+        type: string
+      location:
+        type: object
+        properties:
+          latitude:
+            type: number
+          longitude:
+            type: number
       recipientname:
         type: string
       source:
