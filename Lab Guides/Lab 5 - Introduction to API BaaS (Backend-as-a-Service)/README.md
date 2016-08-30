@@ -230,36 +230,36 @@ Ask your Instructor for Organization and application details.
 > [*https://apigee.com/appservices/\#!/org-overview*](https://apigee.com/appservices/#!/org-overview)
 
     b.  Pick your API BaaS organization from the Organization drop-down
-    c.  Pick the ‘sandbox’ App from the App drop-down
+    c.  Pick the ‘FINANCE’ App from the App drop-down
 
-> ![](./media/image14.png)
+> ![](./media/baas-app.png)
 
     c.  From the BaaS portal menu, select ‘Data’
-    d.  From the Data collections, select ‘hotels’
+    d.  From the Data collections, select ‘payments’
 
-> ![](./media/image10.png)
+> ![](./media/baas-collection.png)
 
     e.  On the right hand side, all the entities that are part of the
     ‘hotels’ collection is presented
 
-    f.  Click on the ‘View Details’ link for one of the hotel entities
+    f.  Click on the ‘View Details’ link for one of the payment entities
     g.  Browse through the details to review the attributes presented in a
     formatted name-value pair. For example, attributes such as
-    address1, airportCode, location: latitude, location:
+    amount, source, sourceType, location: latitude, location:
     longitude, etc.
 
-> ![](./media/image16.png)
+> ![](./media/baas-entity.png)
 
     h. Change the value of
-    'locationDescription’ attribute to “Near museums and stadiums” and
+    'amount’ attribute to another number and
     then click 'Validate JSON'
 
-> ![](./media/image15.png)
+> ![](./media/baas-entity-update.png)
 
     j.  Click on ‘Save’ to save the change you just made.
     k.  Click on ‘Hide Details’ for the entity and browse to the top
 
-**Extra Credit:** Add a new entity to the ‘hotels’ data collection
+**Extra Credit:** Add a new entity to the ‘payments’ data collection
 using the ‘POST’ operation available in the BaaS portal.
 
 ***Hint:*** Remove the uuid and type attributes in case you copy-paste
@@ -273,7 +273,7 @@ from an existing entity.
     subsequent calls
 
     a.  Open up another browser tab and go to
-        > http://api.usergrid.com/{your-org}/sandbox/hotels
+        > http://api.usergrid.com/{your-org}/finance/payments
 
   Replace **{your-org}** with the actual name of your API BaaS
 organization name.
@@ -286,7 +286,7 @@ organization name.
   permissions and roles, see [Managing access by defining permission
   rules](http://apigee.com/docs/app-services/content/managing-access-defining-permission-rules).
 
-    b.  Effectively you’ve called the GET API for the ‘hotels’ data
+    b.  Effectively you’ve called the GET API for the ‘payments’ data
     collection by calling the above URL. Review the information
     presented in JSON format. This is the same information you
     previously saw on the BaaS portal.
@@ -297,12 +297,12 @@ organization name.
 
     d.  Now call the GET API as follows with the limits parameter
 
-> http://api.usergrid.com/{your-org}/sandbox/hotels?limit=5
+> http://api.usergrid.com/{your-org}/finance/payments?limit=5
 
 Replace **{your-org}** with the actual name of your API BaaS
 organization name.
 
-    e.  Review the results and you’ll notice that BaaS has returned 5 hotels
+    e.  Review the results and you’ll notice that BaaS has returned 5 payments
     instead of 10 this time around
 
     f.  To page forward to the next set of results, copy the value of the
@@ -310,7 +310,7 @@ organization name.
     the GET API again after adding the query parameter ‘cursor={cursor
     value}’ to the URL.
 
-    g.  Using cursors, page forwards and backwards through the results.By
+    g.  Using cursors, page forwards and backwards through the results. By
     keeping track of the cursor values, one can start to provide
     paging functionality within an App when using these APIs.
 
@@ -321,29 +321,29 @@ organization name.
 
     a.  Go back to the BaaS portal
 
-    b.  While in the ‘hotels’ collection, use the ‘GET’ method to query
-        for hotels in the city of Burlingame
+    b.  While in the ‘payments’ collection, use the ‘GET’ method to query
+        for hotels with a sourceType of 'VISA'
 
-> ![](./media/image18.png)
+> ![](./media/baas-query.png)
 
     c.  Run the query and review the results. You’ll notice that only those
-    hotels with the city attribute matching ‘Burlingame’ are returned.
+    payments made with 'VISA' are returned.
 
     d.  Try a few of the following other queries to get a better
     understanding of how data querying works in BaaS:
 
-    -   select * where hotelRating = 3
-    -   select * where hotelRating = 3 and city = 'Seattle'
-    -   select * where hotelRating = 3 or city = 'Seattle'
-    -   select * where shortDescription contains 'Pike'
+    -   select * where sourceType = 'VISA'
+    -   select * where amount > 900
+    -   select * where sourceType = 'VISA' and amount < 500
+    -   select * where source contains 'Checking'
 
     e.  These queries can also be provided as parameters to the GET API by
     using the ‘ql’ query parameter. Switch to the browser tab used to
     issue GET API calls directly against the BaaS.
 
-    f.  Call the GET API as follows to get hotels in the city of Burlingame
+    f.  Call the GET API as follows to get payments with a source of 'VISA'
 
-> http://api.usergrid.com/{your-org}/sandbox/hotels?ql=select%20*%20where%20city=%27Burlingame%27
+> http://api.usergrid.com/{your-org}/finance/payments?ql=select%20*%20where%20sourceType=%27VISA%27
 
 Replace **{your-org}** with the actual name of your API BaaS
 organization name.
