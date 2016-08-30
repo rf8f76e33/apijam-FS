@@ -5,7 +5,7 @@
 ## Objectives
 
 In this lab you will get familiar with the Apigee Edge Management UI by
-creating a simple passthrough API Proxy to the GET API for the **hotels** API. After creating the proxy you will also
+creating a simple passthrough API Proxy to the GET API for the **payments** API. After creating the proxy you will also
 learn how to deploy and undeploy a proxy. Finally you will also learn
 how to use the Trace capabilities in the Management UI.
 
@@ -62,7 +62,7 @@ Proxy defined in Apigee Edge.
 
 ## Part 1: A Brief Introduction to OpenAPI Spec
 
-For the purposes of illustration, we've created a specification describing an API that manages information about hotels. 
+For the purposes of illustration, we've created a specification describing an API that manages information about payments. 
 
 **Estimated Time: 6 minutes**
 

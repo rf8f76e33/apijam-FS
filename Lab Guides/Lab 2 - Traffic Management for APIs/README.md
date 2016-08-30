@@ -130,7 +130,7 @@ The various caching policies supported by Apigee Edge are:
   request processing, or during response processing - *Request flow* or
   *Response flow* in Apigee parlance. For each of those, you can set up
   conditions to apply policies to a subset of cases - for example a
-  condition will typically match a url path and verb.  `GET /hotels`
+  condition will typically match a url path and verb.  `GET /payments`
   might have a conditional flow. There is also a "preflow" and
   "postflow" which act like wildcards - the policies attached here will
   run all requests on this proxy, before or after any conditional flow,
