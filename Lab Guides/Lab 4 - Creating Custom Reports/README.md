@@ -203,7 +203,7 @@ you can run a few requests through.
 
   h.  Hit the save button to save and open the report - use the environment dropdown to switch to the test environment. Edge Analytics performs aggregation on a regular interval, asynchronously with respect to incoming API requests. Therefore, you may have to wait a bit to see the data appear in the chart. After a cycle of aggregation occurs, you will see:
 
-  > ![](./media/image19.png)
+  > ![](./media/report.png)
 
   The final configuration of the custom report will look like the
 following :
