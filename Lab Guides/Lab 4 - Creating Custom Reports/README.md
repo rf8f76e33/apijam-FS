@@ -106,7 +106,7 @@ created. Let's add a policy **-**
   **Note :** Make sure you have Statistics collector policy after
 Extract Variable policy on the response path (as shown below).
 
-  > ![](./media/image17.png)
+  > ![](./media/report-policies.png)
 
 8.  For the ‘Statistics Collector’ policy, change the XML configuration
     of the policy as follows :
@@ -118,7 +118,7 @@ Extract Variable policy on the response path (as shown below).
   <Properties/>
   <Statistics>
   <Statistic name="devjam_{your_initials}_type" ref="sourceType" type="String">NO_SOURCE_TYPE</Statistic>
-  <Statistic name="devjam_{your_initials}_status" ref="transactionstatus" type="Float">NO_STATUS</Statistic>
+  <Statistic name="devjam_{your_initials}_status" ref="transactionstatus" type="String">NO_STATUS</Statistic>
   </Statistics>
   </StatisticsCollector>
   ```
@@ -204,11 +204,11 @@ you can run a few requests through.
   The final configuration of the custom report will look like the
 following :
 
-  > ![](./media/image22.png)
+  > ![](./media/report-metrics.png)
 
 **Summary**
 
-In this exercise, you learnt about the statistics collector policy &
+In this exercise, you learned about the statistics collector policy &
 custom reports in Apigee Edge. You also added the custom report along
 with other reports to a custom dashboard. Please visit the
 [*documentation*](http://apigee.com/docs/api-services/content/analytics-dashboards)
