@@ -311,7 +311,7 @@ registering Developer Apps using the Apigee Edge Management UI.
     f. Click the ‘check-mark’ button in the ‘Actions’ column to accept
     the changes
 
-> ![](./media/image23.png)
+> ![](./media/products.png)
 
     g. Click ‘Save’ to save the Developer App. The new app should now be
     listed on the ‘Developer Apps’ page
@@ -520,14 +520,15 @@ APIKey QP” policy.
 
         ii. Send a test ‘/POST OAuth Token - Client Cred’ request from
             Postman after setting appropriate values in the
-            ‘x-www-form-urlencoded’ section of the request:
+            Authorization tab:
             -   client_id: {your_initials}_Financial App Consumer Key**
             -   client_secret: {your_initials}_Financial App Consumer
                 Secret
+            Query Parameters:
             -   grant_type: client_credentials (this should be added as
                 query param)
 
-> ![](./media/image27.png)
+> ![](./media/oauth-creds.png)
 
 **Note**: Copy-paste the Consumer Key and Consumer Secret from the {your_initials}_Financial App’s detail page. As you copy-paste, remove any spaces before and after the values of the Consumer Key and Consumer Secret.
 
