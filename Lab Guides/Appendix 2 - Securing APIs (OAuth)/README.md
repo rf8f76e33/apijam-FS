@@ -1,6 +1,6 @@
 ![](./media/image17.png)
 
-*Appendix 3 - Securing APIs (OAuth)*
+*Appendix 2 - Securing APIs (OAuth)*
 
 ![](./media/image19.png)
 
