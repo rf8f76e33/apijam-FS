@@ -1,6 +1,6 @@
 # Apigee DevJam - Financial Services
 
-> ![](./header.png)
+![](./header.png)
 
 Find out how the world’s leading brands are using Apigee to power the world’s
 leading APIs. Take advantage of this unique opportunity to start building
