@@ -220,7 +220,7 @@ Ask your Instructor for Organization and application details.
 1)  **Interacting with Data Collections** in the BaaS can be done easily
     from the BaaS portal. The BaaS portal provides a user interface
     built using the RESTful APIs automatically exposed by BaaS for
-    data collections. We will review a data collection called ‘hotels’
+    data collections. We will review a data collection called ‘payments’
     in your BaaS instance (this can be accessed from the top right
     menu in the Edge UI or by following step a below).
 
@@ -322,7 +322,7 @@ organization name.
     a.  Go back to the BaaS portal
 
     b.  While in the ‘payments’ collection, use the ‘GET’ method to query
-        for hotels with a sourceType of 'VISA'
+        for payments with a sourceType of 'VISA'
 
 > ![](./media/baas-query.png)
 
