@@ -246,7 +246,7 @@ Developers access your APIs through apps. When the developer registers an app, t
 
 2)  The registration page appears
 
-> ![](./media/portal-register.png)
+> ![](./media/portal-register.png =100x)
 
 3)  Enter the required information and select **Create new account**. Depending on the new account registration settings, when the new account is created, you could be sent an automated welcome email.
 
