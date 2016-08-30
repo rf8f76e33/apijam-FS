@@ -528,7 +528,7 @@ APIKey QP” policy.
             -   grant_type: client_credentials (this should be added as
                 query param)
 
-> ![](./media/oauth-creds.png)
+> ![](./media/oauth-creds2.png)
 
 **Note**: Copy-paste the Consumer Key and Consumer Secret from the {your_initials}_Financial App’s detail page. As you copy-paste, remove any spaces before and after the values of the Consumer Key and Consumer Secret.
 
