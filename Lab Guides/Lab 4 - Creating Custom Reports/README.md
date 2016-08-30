@@ -77,19 +77,22 @@ created. Let's add a policy **-**
     the policy as follows :
 
   ```
-  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-  <ExtractVariables async="false" continueOnError="false" enabled="true" name="Extract-Variables">
-  <DisplayName>Extract Variables</DisplayName>
-  <JSONPayload>
-  <Variable name="sourceType">
-  <JSONPath>$.entities[0].sourceType</JSONPath>
-  </Variable>
-  <Variable name="transactionStatus">
-  <JSONPath>$.entities[0].transactionstatus</JSONPath>
-  </Variable>
-  </JSONPayload>
-  <Source clearPayload="false">response</Source>
-  </ExtractVariables>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="Extract-Variables">
+    <DisplayName>Extract Variables</DisplayName>
+    <JSONPayload>
+        <Variable name="sourceType">
+            <JSONPath>$.entities[0].sourceType</JSONPath>
+        </Variable>
+        <Variable name="transactionStatus">
+            <JSONPath>$.entities[0].transactionstatus</JSONPath>
+        </Variable>
+        <Variable name="amount">
+            <JSONPath>$.entities[0].amount</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <Source clearPayload="false">response</Source>
+</ExtractVariables>
   ```
 
 
@@ -112,15 +115,16 @@ Extract Variable policy on the response path (as shown below).
     of the policy as follows :
 
   ```
-  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-  <StatisticsCollector async="false" continueOnError="false" enabled="true" name="Statistics-Collector">
-  <DisplayName>Statistics Collector</DisplayName>
-  <Properties/>
-  <Statistics>
-  <Statistic name="devjam_{your_initials}_type" ref="sourceType" type="String">NO_SOURCE_TYPE</Statistic>
-  <Statistic name="devjam_{your_initials}_status" ref="transactionStatus" type="String">NO_STATUS</Statistic>
-  </Statistics>
-  </StatisticsCollector>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StatisticsCollector async="false" continueOnError="false" enabled="true" name="Statistics-Collector">
+    <DisplayName>Statistics Collector</DisplayName>
+    <Properties/>
+    <Statistics>
+        <Statistic name="devjam_{your-initials}_type" ref="sourceType" type="String">NO_SOURCE_TYPE</Statistic>
+        <Statistic name="devjam_{your-initials}_status" ref="transactionStatus" type="String">NO_STATUS</Statistic>
+        <Statistic name="devjam_{your-initials}_amount" ref="amount" type="Float">0.00</Statistic>
+    </Statistics>
+</StatisticsCollector>
   ```
 
   Replace {your\_initials} with your initials. Note that you will see devjam\_{your\_initials}\_type, as a dimension in a
@@ -181,13 +185,13 @@ you can run a few requests through.
 
   c.  Chart Type: Column
 
-  d.  Add two Metrics: Traffic - Sum, devjam_{your_intials}_status - Average
+  d.  Add two Metrics: Traffic - Sum, devjam_{your_intials}_amount - Average
 
   > This will create a multidimensional report.
 
-  f.  Dimensions: devjam_{your_initials}_type
-    This is the name of the variable which we created in earlier using
-    the Statistics Collector policy to capture the city name from the
+  f.  Dimensions: devjam_{your_initials}_type, devjam_{your_initials}_status
+    These are the variables which we created in earlier using
+    Statistics Collector to capture the payment amount, type and status from the
     response payload. Using the Statistics Collector policy, you can
     capture variables from the request or response, including headers,
     body, and other attributes and have the analytics engine start
@@ -204,7 +208,7 @@ you can run a few requests through.
   The final configuration of the custom report will look like the
 following :
 
-  > ![](./media/report-metrics.png)
+  > ![](./media/report-metrics2.png)
 
 **Summary**
 
