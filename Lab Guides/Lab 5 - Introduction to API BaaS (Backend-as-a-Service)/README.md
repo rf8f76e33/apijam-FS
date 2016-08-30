@@ -240,7 +240,7 @@ Ask your Instructor for Organization and application details.
 > ![](./media/baas-collection.png)
 
     e.  On the right hand side, all the entities that are part of the
-    ‘hotels’ collection is presented
+    ‘payments’ collection is presented
 
     f.  Click on the ‘View Details’ link for one of the payment entities
     g.  Browse through the details to review the attributes presented in a
