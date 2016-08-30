@@ -118,7 +118,7 @@ Extract Variable policy on the response path (as shown below).
   <Properties/>
   <Statistics>
   <Statistic name="devjam_{your_initials}_type" ref="sourceType" type="String">NO_SOURCE_TYPE</Statistic>
-  <Statistic name="devjam_{your_initials}_status" ref="transactionstatus" type="String">NO_STATUS</Statistic>
+  <Statistic name="devjam_{your_initials}_status" ref="transactionStatus" type="String">NO_STATUS</Statistic>
   </Statistics>
   </StatisticsCollector>
   ```
