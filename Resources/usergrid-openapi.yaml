@@ -11,7 +11,7 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 host: api.usergrid.com
-basePath: /apickelsimer1/finance
+basePath: /demo30/finance
 tags:
   - name: payments
     description: API enabling payment services
