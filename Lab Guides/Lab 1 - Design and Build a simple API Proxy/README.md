@@ -72,7 +72,7 @@ http://playground.apistudio.io/1aea212e-c530-4c4b-b839-cd15e4a6ddcd/
 ![](./media/apistudio.png)
 
 2. On the right side of the editor, in the documentation view, scroll
-down *about 65% of the page* to **GET /hotels** request.   Click the
+down *about 65% of the page* to **GET /payments** request.   Click the
 **Try this operation** button:  
 ![](./media/image40.png)
 
