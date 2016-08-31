@@ -226,7 +226,7 @@ http://playground.apistudio.io/1aea212e-c530-4c4b-b839-cd15e4a6ddcd/spec
 **Note**: In the following, replace **{your-initials}** with the initials of your name. 
   * **Proxy Name**: **{your\_initials}\_payment**
   * **Project Base Path**: **/v1/{your\_initials}\_payment**
-  * **Existing API**: **https://api.usergrid.com/everydaybank/mobileapp**
+  * **Existing API**: **https://api.usergrid.com/{{org}}}/finance**
 
 10. Verify that it looks mostly like this, except with **YOUR** initials in place of dpc: 
 ![](./media/build-step2.png)
@@ -265,7 +265,7 @@ rest of the labs.
 
 2. Select and send the **/GET payment** request.
 
-http://ORG-ENV.apigee.net/v1/INITIALS_payment/
+http://ORG-ENV.apigee.net/v1/INITIALS_payment/payment
 
 3. Observe the lovely response!
 
