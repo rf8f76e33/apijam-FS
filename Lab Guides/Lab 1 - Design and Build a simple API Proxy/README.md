@@ -207,7 +207,7 @@ Steps:
 ![](./media/image45.png)
 
 5. To create a new API proxy, select the + API Proxy button to add a new proxy.  
-![](./media/Plus-API-Proxy.png)
+![](./media/Plus-API-Proxy2.png)
 
 6. On the New API Proxy form that is displayed, provide information needed to generate an API proxy. Select **Reverse Proxy** and click on **Use OpenAPI**  
 ![](./media/image44.png)
@@ -225,7 +225,7 @@ http://playground.apistudio.io/1aea212e-c530-4c4b-b839-cd15e4a6ddcd/spec
   * **Existing API**: **https://api.usergrid.com/{{org}}}/finance**
 
 10. Verify that it looks mostly like this, except with **YOUR** initials: 
-![](./media/build-step2.png)
+![](./media/build-step2-2.png)
 
 11. click next.
 
@@ -236,13 +236,13 @@ http://playground.apistudio.io/1aea212e-c530-4c4b-b839-cd15e4a6ddcd/spec
 ![](./media/image48.png)
 
 14. Select only the **default** virtual host (http only) and Click next
-![](./media/image49.png)
+![](./media/image49-2.png)
 
 15. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy**. 
 ![](./media/buildproxy.png)
 
 16. Once it has built and deployed click the link to view your proxy in the proxy editor. You should see something like this:
-![](./media/proxy-summary.png)
+![](./media/proxy-summary-2.png)
 
 *Congratulations!* You have now built a pass-through API Proxy for an existing backend service.
 
