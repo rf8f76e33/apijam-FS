@@ -259,8 +259,9 @@ rest of the labs.
 
 1. Launch **Postman**. If you have never used Postman before, you can skip account creation process. 
 
-2. Create a new GET request and set the URL to the endpoint of the newly created API. (e.g. http://ORG-ENV.apigee.net/v1/INITIALS_payment/payment). Optionally, you can import the [Postman collection](https://raw.githubusercontent.com/apickelsimer/DevJam-FS/master/Resources/devjam-postman.json) provided in the Resources directory of this repo  but be sure to replace the URL the ORG, ENV, and INTIALS with your own.
+2. Create a new GET request and set the URL to the endpoint of the newly created API. (e.g. http://ORG-ENV.apigee.net/v1/INITIALS_payment/payment). 
 ![](./media/postman-1.png)
+Optionally, you can import the [Postman collection](https://raw.githubusercontent.com/apickelsimer/DevJam-FS/master/Resources/devjam-postman.json) provided in the Resources directory of this repo. To import copy the Postman Collection JSON to your clipboard. Open Postman and click on the Import button on top left and select Paste Raw and then Import. Once imported, be sure to replace the URL the ORG, ENV, and INTIALS with your own.
 
 3. Observe the lovely response!
 ![](./media/postman-2.png)
