@@ -72,12 +72,12 @@ http://playground.apistudio.io/1aea212e-c530-4c4b-b839-cd15e4a6ddcd/
 ![](./media/apistudio.png)
 
 2. On the right side of the editor, in the documentation view, scroll
-down *about 65% of the page* to **GET /payments** request.   Click the
+down to bottom of the right panel until you find the **GET /payments** request.   Click the
 **Try this operation** button:  
-![](./media/image40.png)
+![](./media/get-payments.png)
 
 3. Click on Send Request and observe the response  
-![](./media/image39.png)
+![](./media/response.png)
 This shows you the basics of the online apistudio tool, and how it helps you to explore a specification document. 
 
 3. Examine the left-hand-side of the browser page.  
@@ -94,10 +94,6 @@ Edge by building API proxies that act as proxies or facades for
 backend services.
 
 ### The API Proxy Concept
-
-[Merriam Webster says](http://www.merriam-webster.com/dictionary/proxy) that a proxy is
-
-> the agency, function, or office of a deputy who acts as a substitute for another
 
 Within the domain of Apigee Edge, an API Proxy is something that acts as a substitute
 for the actual API implementation, sometimes called a "backend". Instead of clients directly connecting to a backend API, a client will connect to an API Proxy that runs in Apigee Edge, and Apigee Edge will connect to the backend API.
@@ -228,7 +224,7 @@ http://playground.apistudio.io/1aea212e-c530-4c4b-b839-cd15e4a6ddcd/spec
   * **Project Base Path**: **/v1/{your\_initials}\_payment**
   * **Existing API**: **https://api.usergrid.com/{{org}}}/finance**
 
-10. Verify that it looks mostly like this, except with **YOUR** initials in place of dpc: 
+10. Verify that it looks mostly like this, except with **YOUR** initials: 
 ![](./media/build-step2.png)
 
 11. click next.
@@ -261,13 +257,13 @@ At this point, we will start to use the **Postman** tool as a client
 to invoke our proxy and continue to use **Postman** throughout the
 rest of the labs.
 
-1. Launch **Postman**. Optionally, you can import the Postman collection provided.
+1. Launch **Postman**. If you have never used Postman before, you can skip account creation process. 
 
-2. Select and send the **/GET payment** request.
-
-http://ORG-ENV.apigee.net/v1/INITIALS_payment/payment
+2. Create a new GET request and set the URL to the endpoint of the newly created API. (e.g. http://ORG-ENV.apigee.net/v1/INITIALS_payment/payment). Optionally, you can import the [Postman collection](https://raw.githubusercontent.com/apickelsimer/DevJam-FS/master/Resources/devjam-postman.json) provided in the Resources directory of this repo  but be sure to replace the URL the ORG, ENV, and INTIALS with your own.
+![](./media/postman-1.png)
 
 3. Observe the lovely response!
+![](./media/postman-2.png)
 
 4. For extra credit, you can try invoking the API proxy from other tools, like curl, or RESTclient, etc.
 
