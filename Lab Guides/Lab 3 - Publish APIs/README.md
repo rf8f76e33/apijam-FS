@@ -294,6 +294,8 @@ Apps allow you to control who can access your APIs. You can revoke an app's key,
 
 **Generate API Documentation**
 
+You must log out and log back in as a Developer Portal Administrator instead of a Developer. The instructor will provide credentials to login as an Administrator and perform the remainder of this lab.
+
 1) Create a model
 
 When you create a model, it's stored in your Edge organization as the
@@ -301,15 +303,13 @@ source for the API structure. For more information, see [*About SmartDoc
 models and
 templates*](http://apigee.com/docs/developer-services/content/using-smartdocs-document-apis#models).
 
-&nbsp;&nbsp;a.  Ask you instructor to change your developer user to have administrator access in the portal. Logout and then back in to the developer portal.
-
-&nbsp;&nbsp;b.  Select **Content > SmartDocs** in the Drupal administration menu.
+&nbsp;&nbsp;a.  Select **Content > SmartDocs** in the Drupal administration menu.
 
 > ![](./media/image42.png)
 
-&nbsp;&nbsp;c.  Select **New model** at the top of the page
+&nbsp;&nbsp;b.  Select **New model** at the top of the page
 
-&nbsp;&nbsp;d.  Enter the following fields:<br/>
+&nbsp;&nbsp;c.  Enter the following fields:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;- **Name**: The model name that will be displayed across the site.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;- **Internal name**: As you type the **Name**, the internal name displays. The internal name for the model that must be unique among all models.  The internal name must contain only lowercase letters, numbers, and hyphens with no spaces. Select **Edit** to edit this name.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;- **Description**: A description of the model.
@@ -322,8 +322,13 @@ templates*](http://apigee.com/docs/developer-services/content/using-smartdocs-do
 
 ![](./media/import-oas.png)
 
-&nbsp;&nbsp;a.  The API specification can be of Swagger 1.2, Swagger 2.0 (JSON or YAML) or WADL formats. In this example, we will use Swagger 2.0 – YAML.<br/>
-Save the **apigee-openapi.yaml** file from the lab material to a local drive.<br/>
+&nbsp;&nbsp;a.  The API specification can be of Swagger/OpenAPI (JSON or YAML) or WADL formats. In this example, we will use OpenAPI – YAML.<br/>
+An example OpenAPI spec with the updated security protocal can be found [here](http://playground.apistudio.io/3253a59a-5b43-42d2-95f1-3f6b0e65c8aa/spec)<br/>
+You will need to update the base path of the OpenAPI to reflect your proxy.
+
+host: {{ORG}}-{{ENV}}.apigee.net
+basePath: /v1/{{initials}}_payment
+
 Back in the dev portal administrator, select the **apigee-openapi.yaml** file
 
 > ![](./media/import-oas-upload.png)

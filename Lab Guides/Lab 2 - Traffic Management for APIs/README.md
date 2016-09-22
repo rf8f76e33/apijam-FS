@@ -146,9 +146,9 @@ The various caching policies supported by Apigee Edge are:
 
   Feel free to scroll to examine the list of available policies. 
 
+  Select the ‘Spike Arrest’ policy, and click "Add".  
 
-7. Select the ‘Spike Arrest’ policy, and click "Add".  You have now
-added a policy, and you will be presented with this view:  
+7. You have now added a policy, and you will be presented with this view:  
 ![](./media/spike-arrest.png)
 
 8. Modify the configuration of the policy, specifying "10pm" - 10 per minute - for the Rate.   
