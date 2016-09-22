@@ -78,10 +78,9 @@ down to bottom of the right panel until you find the **GET /payments** request. 
 
 3. Click on Send Request and observe the response  
 ![](./media/response.png)
-
 This shows you the basics of the online apistudio tool, and how it helps you to explore a specification document. 
 
-3. Examine the left-hand-side of the browser page.  
+4. Examine the left-hand-side of the browser page.  
 This markup is called YAML - for Yet Another Markup Language. But it is possible to specify OpenAPI Spec documents using JSON as well. Explore the structure of the specification.  You don't have to learn it, but it is nice to understand what's possible. 
 
 
