@@ -78,6 +78,7 @@ down to bottom of the right panel until you find the **GET /payments** request. 
 
 3. Click on Send Request and observe the response  
 ![](./media/response.png)
+
 This shows you the basics of the online apistudio tool, and how it helps you to explore a specification document. 
 
 3. Examine the left-hand-side of the browser page.  
