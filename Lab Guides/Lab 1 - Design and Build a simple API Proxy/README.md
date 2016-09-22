@@ -224,6 +224,8 @@ http://playground.apistudio.io/1aea212e-c530-4c4b-b839-cd15e4a6ddcd/spec
   * **Project Base Path**: **/v1/{your\_initials}\_payment**
   * **Existing API**: **https://api.usergrid.com/{{org}}}/finance**
 
+  *For this lab, please do not modify {{org}}. This value will be imported from the OpenAPI doc.
+
 10. Verify that it looks mostly like this, except with **YOUR** initials: 
 ![](./media/build-step2-2.png)
 
