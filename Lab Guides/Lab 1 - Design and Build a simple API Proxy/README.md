@@ -325,21 +325,21 @@ Things to consider:
 
 **Tracing the execution of a proxy** can also be done easily from the Management UI. This is a very powerful capability of Apigee Edge, since it makes it easy to troubleshoot and monitor API proxies. The Trace capability lets you probe the details of each step through an API proxy flow.
 
-1. From the **{your\_initials}**\_payment API Proxy page, click on the **Trace** tab.  
-![](./media/proxy-summary-trace.png)
+1. From the **{your\_initials}**\_payment API Proxy page, click on the **Trace** tab on the top right.  
+![](./media/trace-tab.png)
 
 2. In that tab, select the correct environment from the **Deployment to Trace** drop-down. In your case there should only be one environment to choose - **Environment test, Revision 1**.  
 
 3. click Start Trace Session button.
 
-4. In the request field, add `/hotels to the end of the URL, and send the request. 
-![](./media/trace.png)
+4. In the request field, add '/payments' to the end of the URL, and send the request. 
+![](./media/send-trace.png)
 
 
 5. You will see the a transaction appear in the **Transactions** section and a visual representation of the executed proxy flow in the **Transaction Map** section.
 
 6. The **Transaction Map** is interactive - click on the various execution steps within the flow and review the information provided in the **Phase Details** section. You will notice that for each step information such as headers, variables, payload, properties and other relevant information is available. This helps you quickly understand exactly what is happening within the proxy flow.  
-![](./media/trace-results.png)
+![](./media/trace-results2.png)
 
 7. Of course you can send requests from other clients. Try the same request from Postman.  Then flip back to the Trace window to see the transaction.
 
