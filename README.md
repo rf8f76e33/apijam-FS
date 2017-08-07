@@ -51,7 +51,7 @@ Postman can be downloaded from: https://www.getpostman.com/
 | [Lab 2 – Traffic Management for APIs](./Labs/Core/Lab%202%20-%20Traffic%20Management%20for%20APIs)                                     | 30 mins   |
 | [Lab 3 – Publish APIs](./Labs/Core/Lab%203%20-%20Publish%20APIs)                                                                                   | 60 mins       |
 | [Lab 4 - Creating Custom Reports](./Labs/Core/Lab%204%20-%20Creating%20Custom%20Reports)                                   | 45 mins       |
-| [Lab 5 – Introduction to API BaaS](./Labs/Core/Lab%205%20-%20Introduction%20to%20API%20BaaS%20(Backend-as-a-Service))      | 30 mins       |
+| [Lab 5 – Introduction to API BaaS](./Labs/Core/Lab%205%20-%20Introduction%20to%20API%20BaaS%20(Backend-as-a-Service)      | 30 mins       |
 
 ### [Appendix Labs](./Labs/Appendix)
 * API Development - Create a RESTful API from a SOAP service
