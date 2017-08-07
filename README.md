@@ -23,15 +23,15 @@ This is the supporting material for a one-day hands-on workshop that introduces 
 All of the material here is released under the [Apache 2.0 license](./LICENSE.md)
 
 
-###Pre-Requisites 
+### Pre-Requisites 
 
-#####Apigee Account:
+##### Apigee Account:
 Navigate to https://enterprise.apigee.com/login. To create an account, you will need to request an account using the “Create Account” link. Once the account has been registered and your email address confirmed, you can proceed to login. If you have any issues with accessing the demo environment, please reach out to me.
 
-#####Modern Browser (e.g. Chrome or Firefox):
+##### Modern Browser (e.g. Chrome or Firefox):
 If you do not already have a modern browser, such as Chrome or Firefox, please install this before the session. We do not recommend using Internet Explorer.
 
-#####REST Client Tool:
+##### REST Client Tool:
 The lab guides provide a client REST tool that can be used to test interactions with the APIs being developed.
 
 You can use other REST tools such as Postman or other tools. You can download and install Postman (an extension to Chrome or stand-alone installer) for testing of the APIs you build during the session. 
