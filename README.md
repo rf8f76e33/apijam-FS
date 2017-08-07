@@ -47,7 +47,7 @@ Postman can be downloaded from: https://www.getpostman.com/
 
 | Name                                                                                                                                                                                                                      | Duration  |
 |-------------------------------------------------------------------------------------------------------------------------------|---------      |
-| [Lab 1 – API Design - Create a Reverse Proxy with OpenAPI specification](./Labs/Core/Lab%201%20-%20Design%20and%20Build%20a%20simple%20API%20Proxy)   | 30 mins       |
+| [Lab 1 – API Design - Create a Reverse Proxy with OpenAPI specification](./Labs/Core/Lab%201%20-%20Design%20and%20Build%20a%20simple%20API%20Proxy)   | 35 mins       |
 | [Lab 2 – Traffic Management for APIs](./Labs/Core/Lab%202%20-%20Traffic%20Management%20for%20APIs)                                     | 30 mins   |
 | [Lab 3 – Publish APIs](./Labs/Core/Lab%203%20-%20Publish%20APIs)                                                                                   | 60 mins       |
 | [Lab 4 - Creating Custom Reports](./Labs/Core/Lab%204%20-%20Creating%20Custom%20Reports)                                   | 45 mins       |
