@@ -356,7 +356,7 @@ automatically
 *  Try the other query examples provided earlier and use them as the
     value of the ‘ql’ parameter of the GET API call.
 
-##Summary
+## Summary
 
 That completes this hands-on lesson. We have barely scratched the
 surface of Apigee API BaaS capabilities. In this lab we learned how data
