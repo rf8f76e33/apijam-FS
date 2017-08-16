@@ -4,16 +4,23 @@
 
 ![](./media/image18.png)
 
-## Objectives
+*Duration : 30 mins*
 
-The goal of this lesson is to introduce you to Traffic Management
-policies and applying a couple of these policies to the API Proxy you
-created in the previous lesson.
+*Persona : API Team / Security*
+# Use case
 
-The total estimated time required for this exercise: 30 minutes.
+You have a requirement to protect your target servers (backend) from traffic spikes. You would like to protect your APIs from denial of service attacks that might lead to performance lags or downtime of your backend.
 
-## Pre-Requisites
--   Lab 1 is completed
+# How can Apigee Edge help?
+
+By exposing an API through Apigee Edge, you gain the ability to modify and monitor its behavior using out-of-the-box policies. Edge's out-of-the-box policies enable you to enhance your API with sophisticated features to control traffic, enhance performance, enforce security, and increase the utility of your APIs, without requiring you to write any code or to modify any backend services. Extension policies enable you to implement custom logic in the form of JavaScript, Python, Java, and XSLT.
+
+In this lab we will see how to use an out of the box traffic management policy, "Spike Arrest", to protect against traffic spikes. A Spike Arrest policy can throttle the number of requests processed by an API proxy and sent to a backend, protecting against performance lags and downtime.
+
+# Pre-requisites
+
+Apigee Edge API Proxy created in earlier lab exercise. If not, jump back to "API Design - Create a Reverse Proxy with OpenAPI specification" lab.
+
 
 ## Background
 
@@ -112,18 +119,25 @@ The various caching policies supported by Apigee Edge are:
 
 **Estimated Time: 6 minutes**
 
-1. Go to the Apigee Edge Management UI browser tab.
+* Go to the [Apigee Edge Management UI](https://apigee.com/edge) and log in. This is the Edge management UI.
 
-2. Ensure you're viewing the list of API Proxies.  If not, Use the upper navbar to select "API Proxies".  
-![](./media/cap500-select-API-Proxies.png)
+* Select **Develop → API Proxies** in the side navigation menu.
 
-3. From the list of proxies, Click the name of *your* API proxy.
+![image alt text](./media/image_2.png)
 
-4. Click on the develop tab.  
-![](./media/select-develop.png)
+* Click on **{your_initials}**\_payments\_api that you have created in earlier lab exercise.
 
-5. Click on Proxy Endpoints &gt; PreFlow.  
-![](./media/select-preflow.png)
+![image alt text](./media/image_3.png)
+
+* Click on **Develop** tab to access API Proxy development dashboard.
+
+![image alt text](./media/image_4.png)
+
+![image alt text](./media/image_5.png)
+
+* Click on **PreFlow** under Proxy Endpoint default.
+
+![image alt text](./media/image_6.png)
 
   Each proxy has a number of different places at which developers can
   attach policies. You can specify that your policies will run during
@@ -136,23 +150,24 @@ The various caching policies supported by Apigee Edge are:
   run all requests on this proxy, before or after any conditional flow,
   respectively.
 
-6. Click on `+ Step` on the Request Flow.  
-![](./media/add-step.png)
+* Click on **+ Step** on top of Request Flow to attach a spike arrest policy.  
+![](./media/image_6a.png)
 
   By doing this, you are adding a policy step that will run in the
   Request Pre-flow. It will run for all inbound requests. You will see a
   modal dialog that allows you to select a particular policy:   
-  ![](./media/modal-add-a-step.png)  
+  ![](./media/image_6b.png)  
 
   Feel free to scroll to examine the list of available policies. 
 
-  Select the ‘Spike Arrest’ policy, and click "Add".  
+* Select the **Spike Arrest Policy**. Click on **Add** button to add spike arrest policy to proxy endpoint reflow request.  
+![](./media/image_7.png)
 
-7. You have now added a policy, and you will be presented with this view:  
-![](./media/spike-arrest.png)
+ You have now added a policy, and you will be presented with this view:  
+![](./media/image_8.png)
 
-8. Modify the configuration of the policy, specifying "10pm" - 10 per minute - for the Rate.   
-![](./media/spike-arrest2.png)
+* Modify the configuration of the policy, specifying "12pm" - 12 per minute - for the Rate.   
+![](./media/image_8a.png)
 
   This shows you the basics related to configuring policies in Apigee
   Edge. There are numerous policy types, and for each one, you may
@@ -161,40 +176,24 @@ The various caching policies supported by Apigee Edge are:
   Your configuration should look
   something like the following. The DisplayName and name are not of critical importance:
 
-  ```
-  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-  <SpikeArrest async="false" continueOnError="false" enabled="true" name="Spike-Arrest-1">
-      <DisplayName>Spike Arrest 10pm</DisplayName>
-      <Properties/>
-      <Identifier ref="request.header.some-header-name"/>
-      <MessageWeight ref="request.header.weight"/>
-      <Rate>10pm</Rate>
-  </SpikeArrest>
-  ```
+```
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SpikeArrest async="false" continueOnError="false" enabled="true" name="Spike-Arrest-1">
+    <DisplayName>Spike Arrest-1</DisplayName>
+    <Properties/>
+    <Rate>12pm</Rate>
+</SpikeArrest>
+```
 
-9. Save the changes to the proxy and ensure that it is deployed
-successfully to the ‘test’ environment.
-![](./media/spike-arrest3.png)
 
-  Think of Spike Arrest as a way to generally protect against traffic
-  spikes (system wide) rather than as a way to limit traffic to a
-  specific number of requests *per user*. Your APIs and backend can
-  handle a certain amount of traffic, and the Spike Arrest policy helps
-  you smooth traffic to the general amounts you want, or to set safety
-  limits.
+Think of Spike Arrest as a way to generally protect against traffic spikes (system wide) rather than as a way to limit traffic to a specific number of requests *per user*. Your APIs and backend can handle a certain amount of traffic, and the Spike Arrest policy helps you smooth traffic to the general amounts you want, or to set safety limits.
 
-  The runtime Spike Arrest behavior differs from what you might expect
-  to see from the literal per-minute or per-second values you enter.
+The runtime Spike Arrest behavior differs from what you might expect to see from the literal per-minute or per-second values you enter.
 
-  For example, say you enter a rate of 30pm (30 requests per minute). In
-  testing, you might think you could send 30 requests in 1 second, as
-  long as they came within a minute. But that's not how the policy
-  enforces the setting. Thirty requests inside a
-  1-second period could be considered a mini spike in some environments.
+For example, say you enter a rate of 30pm (30 requests per minute). In testing, you might think you could send 30 requests in 1 second, as long as they came within a minute. But that's not how the policy enforces the setting. Thirty requests inside a 1-second period could be considered a mini spike in some environments.
 
-  Instead, Spike Arrest smooths the allowed traffic by dividing your
-  settings into smaller intervals:
-
+Instead, Spike Arrest smooths the allowed traffic by dividing your settings into smaller intervals:
+* Interval Options:
   * **Per-minute** rates get smoothed into requests allowed intervals of
     **seconds**. For example, 30pm gets smoothed like this: 60 seconds
     (1 minute) / 30pm = 2-second intervals, or about 1 request allowed
@@ -207,16 +206,34 @@ successfully to the ‘test’ environment.
     1 request allowed every 100 milliseconds . A second request inside
     of 100ms will fail. Also, an 11th request within a second will fail.
 
+* Click on **Save** button to save the proxy and ensure that it is deployed successfully to the **test** environment.
+![](./media/image_9.png)
 
-10. Now, test the proxy.  Use Postman to quickly send more than 2 requests in 6 seconds and observe that certain requests will receive an error with the errorCode `policies.ratelimit.SpikeArrestViolation`.
+  * *Congratulations!*...You have now secured your backend against denial of service attacks, performance lags or downtime of target servers.
 
-11. Let's use the Trace UI to examine what's happening. Return to the Edge UI, and select the Trace tab again. 
-![](./media/trace.png)
+* Let us test the updated API proxy using the Trace Console. Click on **Trace** tab.
+![](./media/image_10.png)
 
-12. Return to Postman, and send a few more requests. Now back to the Edge UI.  Examine the trace. You should see some requests returning 500 errors, indicating that the SpikeArrest has sent back the call. 
-![](./media/trace2.png)
+* Click on **Start Trace Session** to see API Proxy with spike arrest in action.
+![](./media/image_11.png)
 
-13. Stop the Trace session.
+* Click on **Send** button multiple times, You will see 500 response code when spike arrest policy kicks in to protect target servers from spike in traffic. Note to add the **/payments** to the url to execute the return function of all payments.
+
+	![](./media/image_12.png)
+
+   * You can use the [Apigee Rest Client](https://apigee-rest-client.appspot.com/) to test Spike Arrest Policy.
+![image alt text](./media/image_13.png)
+
+
+   * Or you can use Postman to quickly send more than 2 requests in 6 seconds and observe that certain requests will receive an error with the errorCode `policies.ratelimit.SpikeArrestViolation`.
+
+* Let's use the Trace UI to examine what's happening. Return to the Edge UI, and select the Trace tab again. 
+![](./media/image_14.png)
+
+* Return to testing tool, and send a few more requests. Now back to the Edge UI.  Examine the trace. You should see some requests returning 500 errors, indicating that the SpikeArrest has sent back the call. 
+![](./media/image_12.png)
+
+* Stop the Trace session.
 
 
 ## Part 2: Adding a Response Cache
@@ -225,19 +242,29 @@ successfully to the ‘test’ environment.
 
 Now we'll introduce the ResponseCache policy.  
 
-1. Go to the Apigee Edge Management UI browser tab.
+* Go to the [Apigee Edge Management UI](https://apigee.com/edge) and log in. This is the Edge management UI.
 
-2. Select your API proxy. Select the Develop tab
+* Select **Develop → API Proxies** in the side navigation menu.
 
-3. Click on Proxy Endpoints -&gt; PreFlow
-![](./media/cache1.png)
+![image alt text](./media/image_2.png)
 
-4. Click on “+ Step” on the Request Flow.
-![](./media/cache2.png)
+* Click on **{your_initials}**\_payments\_api that you have created in earlier lab exercise.
 
-5. From the resulting modal dialog, Select the ‘Response Cache’ policy, and click Add.
+![image alt text](./media/image_3.png)
+
+* Click on **Develop** tab to access API Proxy development dashboard.
+
+![image alt text](./media/image_4.png)
+
+![image alt text](./media/image_5.png)
+
+* Click on **PreFlow** under Proxy Endpoint default, Click on “+ Step” on the Request Flow
+
+![](./media/image_19.png)
+
+* From the resulting modal dialog, Select the **Response Cache** policy, and click Add.
 You should see something like the following: 
-![](./media/add-cache-policy.png)
+![](./media/image_20.png)
 
   You have now added a second policy to the Request Pre-Flow. Remember,
   these are policies that will run for every inbound request handled by
@@ -282,40 +309,38 @@ You should see something like the following:
   For more information on Cache Resources, see [Manage Caches for an
   Environment](http://apigee.com/docs/api-services/content/manage-caches-environment).
 
+* Your Proxy Endpoints → Default → PreFlow should now look as follows:
+![](./media/image_21.png)
 
-10. Your Proxy Endpoints → Default → PreFlow should now look as follows:
-![](./media/cache3.png)
+* Click the Target Endpoints → default → PostFlow
+![](./media/image_22.png)
 
-11. Click the Target Endpoints → default → PostFlow
-![](./media/cache4.png)
+* Verify that it looks as follows:
+![](./media/image_23.png)
 
-12. Verify that it looks as follows:
-![](./media/cache5.png)
+* **Save** the changes to the API Proxy, and wait for it to successfully deploy.
 
-13. Save the changes to the API Proxy, and wait for it to successfully deploy.
+* Now, let's test the modifications you've made.  Click the **Trace** tab and press **Start Trace Session**.
 
-14. Now, let's test the modifications you've made.  Click the Trace tab and start a Trace session.
+* Send a test **/GET payment** request.
 
-15. From Postman, send a test ‘/GET payment’ request from Postman
-![](./media/postman.png)
+  * You can use the [Apigee Rest Client](https://apigee-rest-client.appspot.com/) to test Response Cache Policy.
+![](./media/image_24.png)
 
-16. In the Postman UI, you should see a success response, and a timing.
+  * From Postman, send a test ‘/GET payment’ request from Postman. In the Postman UI, you should see a success response, and a timing. Wait for 6 to 10 seconds, to avoid the Spike Arrest policy from stopping your requests) and send the same request again from Postman. You should see a faster response this time.
+![](./media/image_25.png)
 
-16. Wait for 6 to 10 seconds, to avoid the Spike Arrest policy from
-  stopping your requests) and send the same request again from
-  Postman. You should see a faster response this time.
-
-17. Go back to the Edge UI, in the Trace view and review the transaction
+* Go back to the Edge UI, in the Trace view and review the transaction
   map of both the requests including the overall elapsed time to process
   both requests.
 
   The first transaction map will show you that the request was proxied
   to the backend. It should look as follows:
-  ![](./media/trace-cache1.png)
+  ![](./media/image_26.png)
 
   The view for the second transaction will show you that the response
   was served from cache. It will look as follows:
-  ![](./media/trace-cache.png)
+  ![](./media/image_27.png)
 
   After configuring the Response Cache policy, as expected, after the
   initial request, the second and all other requests for the next 3600
@@ -325,14 +350,25 @@ You should see something like the following:
   increase concurrency at high transaction rates.
 
 
-**Questions:**
+# Lab Video
 
-* Suppose you modified the ResponseCache policy to have a TTL of 10 seconds.  Then, suppose you sent new requests in.  At this point, Would you expect the cache to be re-filled every 10 seconds?  Explain.
+If you like to learn by watching, here is a short video on using Spike Arrest policy. [https://youtu.be/3Gi-GGTqllg](https://youtu.be/3Gi-GGTqllg)
 
-* What would you need to do in order to allow an administrator the ability to clear the cache?
+# Earn Extra-points
 
+Now that you have protected your backend against spike in traffic, Explore more about spike arrest policy using docs here, [http://docs.apigee.com/api-services/reference/spike-arrest-policy](http://docs.apigee.com/api-services/reference/spike-arrest-policy) & update the policy with identifer like queryparam on which spike arrest counter is updated. Use message weight property to assign a weight to the counter.
 
-## Summary
+# Quiz
+
+1. Assume there is a single message processor, Spike Arrest rate limit is 2 pm, What is the interval of time in which a single API Request is allowed to reach target server ?
+
+2. Is it possible to implement spike arrest based on run time variables like per developer / per app ?
+
+3. Suppose you modified the ResponseCache policy to have a TTL of 10 seconds.  Then, suppose you sent new requests in.  At this point, Would you expect the cache to be re-filled every 10 seconds?  Explain.
+
+4. What would you need to do in order to allow an administrator the ability to clear the cache?
+
+# Summary
 
 That completes this hands-on lesson. You learned how to use the Spike
 Arrest to protect the environment from traffic spikes and to use the
@@ -340,3 +376,22 @@ Response Cache policy to provide a better overall experience for the API
 consumer while reducing network traffic. Obviously like any other
 policy, these policies must be used appropriately based upon your use
 cases.
+
+# References
+
+* Useful Apigee documentation links on Traffic Management & Spike Arrest Policy  - 
+
+    * Spike Arrest Policy - http://docs.apigee.com/api-services/reference/spike-arrest-policy
+
+    * Rate Limiting - [http://docs.apigee.com/api-services/content/rate-limiting](http://docs.apigee.com/api-services/content/rate-limiting)
+
+    * Comparing Rate Limiting Policies - [http://docs.apigee.com/api-services/content/comparing-quota-spike-arrest-and-concurrent-rate-limit-policies](http://docs.apigee.com/api-services/content/comparing-quota-spike-arrest-and-concurrent-rate-limit-policies) 
+    
+    * Response Cache Policy - [http://docs.apigee.com/api-services/reference/response-cache-policy](http://docs.apigee.com/api-services/reference/response-cache-policy)
+
+# Rate this lab
+
+How did you like this lab? Rate [here](https://goo.gl/forms/oivm4A6DqBKM9AEJ3).
+
+Now go to [Lab-3](./../Lab%203%20API%20Diagnostics%20-%20Trace%20tool)
+

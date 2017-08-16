@@ -47,11 +47,16 @@ Postman can be downloaded from: https://www.getpostman.com/
 
 | Name                                                                                                                                                                                                                      | Duration  |
 |-------------------------------------------------------------------------------------------------------------------------------|---------      |
-| [Lab 1 – API Design - Create a Reverse Proxy with OpenAPI specification](./Labs/Core/Lab%201%20-%20Design%20and%20Build%20a%20simple%20API%20Proxy)   | 35 mins       |
+| [Lab 1 – API Design - Create a Reverse Proxy with OpenAPI specification](./Labs/Core/Lab%201%20-%20Design%20and%20Build%20a%20simple%20API%20Proxy)   | 35 mins   |
 | [Lab 2 – Traffic Management for APIs](./Labs/Core/Lab%202%20-%20Traffic%20Management%20for%20APIs)                                     | 30 mins   |
-| [Lab 3 – Publish APIs](./Labs/Core/Lab%203%20-%20Publish%20APIs)                                                                                   | 60 mins       |
-| [Lab 4 - Creating Custom Reports](./Labs/Core/Lab%204%20-%20Creating%20Custom%20Reports)                                   | 45 mins       |
-| [Lab 5 – Introduction to API BaaS](./Labs/Core/Lab%205%20-%20Introduction%20to%20API%20BaaS%20(Backend-as-a-Service)      | 30 mins       |
+| [Lab 3 – API Diagnostics - Trace Tool](./Labs/Core/Lab%203%20API%20Diagnostics%20-%20Throttle%20APIs)                                  | 20 mins   |
+| [Lab 4 – API Security - Securing APIs with API Keys](./Labs/Core/Lab%204%20API%20Security%20-%20Securing%20APIs%20with%20API%20Keys)   | 30 mins   |
+| [Lab 5 – Traffic Management - Rate Limit APIs](./Labs/Core/Lab%205%20Traffic%20Management%20-%20Rate%20Limit%20APIs)                   | 20 mins   |
+| [Lab 6 – API Publishing - Documentation](./Labs/Core/Lab%206%20API%20Publishing%20-%20Documentation)                                   | 15 mins   |
+| [Lab 7 – API Publishing - Developer Portal Customization](./Labs/Core/Lab%207%20API%20Publishing%20-%20Developer%20Portal%20Customization) | 30 mins   |
+| [Lab 8 – Consume APIs](./Labs/Core/Lab%208%20Consume%20APIs)                                                                           | 20 mins   |
+| [Lab 9 – API Analytics - Custom Reports](./Labs/Core/Lab%209%20API%20Analytics%20-%20Custom%20Reports)                                 | 20 mins   |
+| [Lab 10 – Introduction to API BaaS](./Labs/Core/Lab%2010%20Introduction%20to%20API%20BaaS%20(Backend-as-a-Service)      | 30 mins       |
 
 ### [Appendix Labs](./Labs/Appendix)
 * API Development - Create a RESTful API from a SOAP service
