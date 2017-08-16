@@ -263,7 +263,7 @@ Ask your Instructor for Organization and application details.
 > ![](./media/baas-entity-update.png)
 
     j.  Click on ‘Save’ to save the change you just made.
-    k.  Click on ‘Hide Details’ for the entity and browse to the top
+    k.  Click on the row for the entity to close the record and browse to the top
 
 **Extra Credit:** Add a new entity to the ‘payments’ data collection
 using the ‘POST’ operation available in the BaaS portal.
