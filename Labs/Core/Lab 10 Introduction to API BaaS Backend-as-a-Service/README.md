@@ -24,7 +24,7 @@ monitoring, and more.
 
 
 
-![](./media/image09.png)
+![](./media/image00.png)
 
 API Baas provides the following features:
 
