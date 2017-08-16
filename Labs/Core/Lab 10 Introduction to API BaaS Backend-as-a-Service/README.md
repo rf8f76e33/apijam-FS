@@ -234,33 +234,31 @@ Ask your Instructor for Organization and application details.
 
 > ![](./media/image07.png)
 
-    a.  Open a browser tab & log in to your API BaaS instance by going to:
-> [*https://apigee.com/appservices/\#!/org-overview*](https://apigee.com/appservices/#!/org-overview)
+    a.  Select the API Baas Option under the Develop section:
+    b.  Pick your API BaaS organization 'everydaybank' from the Organization drop-down
+    c.  Pick the ‘apijam’ App from the App drop-down
 
-    b.  Pick your API BaaS organization from the Organization drop-down
-    c.  Pick the ‘FINANCE’ App from the App drop-down
+> ![](./media/image_03.png)
 
-> ![](./media/baas-app.png)
-
-    c.  From the BaaS portal menu, select ‘Data’
+    c.  From the BaaS tab options, select ‘Collections’
     d.  From the Data collections, select ‘payments’
 
-> ![](./media/baas-collection.png)
+> ![](./media/image_04.png)
 
     e.  On the right hand side, all the entities that are part of the
     ‘payments’ collection is presented
 
-    f.  Click on the ‘View Details’ link for one of the payment entities
+    f.  Click on the row of one of the entity of the payment entities
     g.  Browse through the details to review the attributes presented in a
     formatted name-value pair. For example, attributes such as
     amount, source, sourceType, location: latitude, location:
     longitude, etc.
 
-> ![](./media/baas-entity.png)
+> ![](./media/image_05.png)
 
     h. Change the value of
     'amount’ attribute to another number and
-    then click 'Validate JSON'
+    then click 'Check JSON' and 'Save'
 
 > ![](./media/baas-entity-update.png)
 
@@ -281,7 +279,7 @@ from an existing entity.
     subsequent calls
 
     a.  Open up another browser tab and go to
-        > https://apibaas-trial.apigee.net/{your-org}/finance/payments
+        > https://apibaas-trial.apigee.net/{your-org}/apijam/payments
 
   Replace **{your-org}** with the actual name of your API BaaS
 organization name.
@@ -305,7 +303,7 @@ organization name.
 
     d.  Now call the GET API as follows with the limits parameter
 
-> https://apibaas-trial.apigee.net/{your-org}/finance/payments?limit=5
+> https://apibaas-trial.apigee.net/{your-org}/apijam/payments?limit=5
 
 Replace **{your-org}** with the actual name of your API BaaS
 organization name.
