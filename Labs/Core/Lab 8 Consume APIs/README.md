@@ -1,4 +1,6 @@
-# API Publishing : Consume APIs 
+# Lab 8 - API Publishing : Consume APIs 
+
+![](./media/image_00.png)
 
 *Duration : 20 mins*
 

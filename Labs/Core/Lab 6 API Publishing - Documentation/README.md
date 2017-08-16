@@ -1,5 +1,7 @@
 # Lab 6 - Publishing APIs : Publish documentation
 
+![](./media/image_00.png)
+
 *Duration : 15 mins*
 
 *Persona : API Team*

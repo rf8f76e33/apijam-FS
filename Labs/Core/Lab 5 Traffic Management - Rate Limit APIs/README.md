@@ -1,5 +1,7 @@
 # Lab 5 - Traffic Management : Rate Limit APIs
 
+![](./media/image_00.png)
+
 *Duration : 20 mins*
 
 *Persona : API Team / API Product Manager*

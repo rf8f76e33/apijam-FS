@@ -1,5 +1,7 @@
 # Lab 9 - API Analytics : Custom Reporting
 
+![](./media/image_00.png)
+
 *Duration : 20 mins*
 
 *Persona : API Team*
@@ -213,4 +215,4 @@ In this exercise, you learned about custom reports in Apigee Edge. You also adde
 
 How did you like this lab? Rate [here](https://goo.gl/forms/4elHC2g6EuwnBlon1).
 
-Now go to [Lab-9](./../Lab%2010%20Introduction%20to%20API%20BaaS%20(Backend-as-a-Service)
+Now go to [Lab-10](./../Lab%2010%20Introduction%20to%20API%20BaaS%20Backend-as-a-Service)

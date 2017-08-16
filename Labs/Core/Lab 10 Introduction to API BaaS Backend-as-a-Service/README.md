@@ -362,7 +362,7 @@ automatically
     g.  Try the other query examples provided earlier and use them as the
     value of the ‘ql’ parameter of the GET API call.
 
-**Summary**
+##Summary
 
 That completes this hands-on lesson. We have barely scratched the
 surface of Apigee API BaaS capabilities. In this lab we learned how data
@@ -371,3 +371,16 @@ interacted with using the BaaS portal and RESTful APIs automatically
 exposed by BaaS, and how to easily query the data including full-text
 searching. For further information refer to the API BaaS
 [*documentation*](http://apigee.com/docs/developer-services/content/add-and-edit-content).
+
+## Additional References
+
+* Useful Apigee documentation links on BaaS - 
+
+    * BaaS documentation [http://docs.apigee.com/api-baas](http://docs.apigee.com/api-baas)
+    * Push Notifications [http://docs.apigee.com/app-services/content/push-notifications-overview](http://docs.apigee.com/app-services/content/push-notifications-overview)
+    * User Management and Social Graph [http://docs.apigee.com/app-services/content/user-management](http://docs.apigee.com/app-services/content/user-management)
+    
+# Rate this lab
+
+How did you like this lab? Rate [here](https://goo.gl/forms/4elHC2g6EuwnBlon1).
+

@@ -1,5 +1,7 @@
 # Lab 3 - API Diagnostics : Trace Tool
 
+![](./media/image_00.png)
+
 *Duration : 20 mins*
 
 *Persona : API Team / DevOps*

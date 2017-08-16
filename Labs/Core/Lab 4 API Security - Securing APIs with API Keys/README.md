@@ -1,5 +1,7 @@
 # Lab 4 - API Security : Securing APIs with API Key
 
+![](./media/image_00.png)
+
 *Duration : 30 mins*
 
 *Persona : API Team*

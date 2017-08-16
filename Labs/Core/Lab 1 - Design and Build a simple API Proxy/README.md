@@ -282,7 +282,7 @@ For testing your new api, you can either use the [REST Client](https://apigee-re
 ![image alt text](./media/image_18.png)
 
 * You should see a success response similar to this -
-![image alt text](./media/image_19.jpg)
+![image alt text](./media/image_19.png)
 
 ***Postman***
 

@@ -1,5 +1,7 @@
 # Lab 7 - API Publishing - Developer Portal Customization 
 
+![](./media/image_00.png)
+
 *Duration : 30 mins*
 
 *Persona : API Team*
