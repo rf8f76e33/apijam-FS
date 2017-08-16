@@ -225,45 +225,38 @@ Ask your Instructor for Organization and application details.
 
 # Instructions
 
-*  **Interacting with Data Collections** in the BaaS can be done easily
-    from the BaaS portal. The BaaS portal provides a user interface
-    built using the RESTful APIs automatically exposed by BaaS for
-    data collections. We will review a data collection called ‘payments’
-    in your BaaS instance (this can be accessed from the top right
-    menu in the Edge UI or by following step a below).
+**Interacting with Data Collections** in the BaaS can be done easily from the BaaS portal. The BaaS portal provides a user interface built using the RESTful APIs automatically exposed by BaaS for data collections. We will review a data collection called ‘payments’ in your BaaS instance (this can be accessed from the top right menu in the Edge UI or by following step a below).
 
 > ![](./media/image07.png)
 
-    a.  Select the API Baas Option under the Develop section:
-    b.  Pick your API BaaS organization 'everydaybank' from the Organization drop-down
-    c.  Pick the ‘apijam’ App from the App drop-down
+*  Select the API Baas Option under the Develop section:
+*  Pick your API BaaS organization 'everydaybank' from the Organization drop-down
+*  Pick the ‘apijam’ App from the App drop-down
 
 > ![](./media/image_03.png)
 
-    c.  From the BaaS tab options, select ‘Collections’
-    d.  From the Data collections, select ‘payments’
+*  From the BaaS tab options, select ‘Collections’
+*  From the Data collections, select ‘payments’
 
 > ![](./media/image_04.png)
 
-    e.  On the right hand side, all the entities that are part of the
+*  On the right hand side, all the entities that are part of the
     ‘payments’ collection is presented
 
-    f.  Click on the row of one of the entity of the payment entities
-    g.  Browse through the details to review the attributes presented in a
+*  Click on the row of one of the entity of the payment entities
+*  Browse through the details to review the attributes presented in a
     formatted name-value pair. For example, attributes such as
     amount, source, sourceType, location: latitude, location:
     longitude, etc.
 
 > ![](./media/image_05.png)
 
-    h. Change the value of
-    'amount’ attribute to another number and
-    then click 'Check JSON' and 'Save'
+* Change the value of 'amount’ attribute to another number and then click 'Check JSON' and 'Save'
 
 > ![](./media/baas-entity-update.png)
 
-    j.  Click on ‘Save’ to save the change you just made.
-    k.  Click on the row for the entity to close the record and browse to the top
+*  Click on ‘Save’ to save the change you just made.
+*  Click on the row for the entity to close the record and browse to the top
 
 **Extra Credit:** Add a new entity to the ‘payments’ data collection
 using the ‘POST’ operation available in the BaaS portal.
@@ -271,17 +264,19 @@ using the ‘POST’ operation available in the BaaS portal.
 ***Hint:*** Remove the uuid and type attributes in case you copy-paste
 from an existing entity.
 
-*  **Paging through results** is supported inherently by BaaS. By
+________________________________________________________________________
+
+   **Paging through results** is supported inherently by BaaS. By
     default, the GET API for data collections in BaaS returns 10
     entities at a time. This can be changed by providing a ‘limits’
     query parameter when calling the API. To page through the results,
     API BaaS provides a cursor attribute, which can be used in
     subsequent calls
 
-    a.  Open up another browser tab and go to
+*  Open up another browser tab and go to
         > https://apibaas-trial.apigee.net/{your-org}/apijam/payments
-
-  Replace **{your-org}** with the actual name of your API BaaS
+        
+Replace **{your-org}** with the actual name of your API BaaS
 organization name.
 
   **Note**: The 'sandbox' App created for these lab exercises has
@@ -292,50 +287,51 @@ organization name.
   permissions and roles, see [Managing access by defining permission
   rules](http://apigee.com/docs/app-services/content/managing-access-defining-permission-rules).
 
-    b.  Effectively you’ve called the GET API for the ‘payments’ data
+*  Effectively you’ve called the GET API for the ‘payments’ data
     collection by calling the above URL. Review the information
     presented in JSON format. This is the same information you
     previously saw on the BaaS portal.
 
-    c.  Browse towards the bottom of the response. You’ll notice that by
+*  Browse towards the bottom of the response. You’ll notice that by
     default BaaS provides 10 entities at a time. This can be verified
     by looking at the attribute "count" : 10
 
-    d.  Now call the GET API as follows with the limits parameter
+*  Now call the GET API as follows with the limits parameter
 
 > https://apibaas-trial.apigee.net/{your-org}/apijam/payments?limit=5
 
 Replace **{your-org}** with the actual name of your API BaaS
 organization name.
 
-    e.  Review the results and you’ll notice that BaaS has returned 5 payments
+*  Review the results and you’ll notice that BaaS has returned 5 payments
     instead of 10 this time around
 
-    f.  To page forward to the next set of results, copy the value of the
+*  To page forward to the next set of results, copy the value of the
     ‘cursor’ attributed provided at the bottom of the results and call
     the GET API again after adding the query parameter ‘cursor={cursor
     value}’ to the URL.
 
-    g.  Using cursors, page forwards and backwards through the results. By
+*  Using cursors, page forwards and backwards through the results. By
     keeping track of the cursor values, one can start to provide
     paging functionality within an App when using these APIs.
 
 <!-- -->
+________________________________________________________________________
 
-*  **Querying data** is also easily accomplished by using API BaaS’
+**Querying data** is also easily accomplished by using API BaaS’
     query language capabilities.
 
-    a.  Go back to the BaaS portal
+*  Go back to the BaaS portal
 
-    b.  While in the ‘payments’ collection, use the ‘GET’ method to query
+*  While in the ‘payments’ collection, use the ‘GET’ method to query
         for payments with a sourceType of 'VISA'
 
 > ![](./media/baas-query.png)
 
-    c.  Run the query and review the results. You’ll notice that only those
+*  Run the query and review the results. You’ll notice that only those
     payments made with 'VISA' are returned.
 
-    d.  Try a few of the following other queries to get a better
+*  Try a few of the following other queries to get a better
     understanding of how data querying works in BaaS:
 
     -   select * where sourceType = 'VISA'
@@ -343,11 +339,11 @@ organization name.
     -   select * where sourceType = 'VISA' and amount < 500
     -   select * where source contains 'Checking'
 
-    e.  These queries can also be provided as parameters to the GET API by
+*  These queries can also be provided as parameters to the GET API by
     using the ‘ql’ query parameter. Switch to the browser tab used to
     issue GET API calls directly against the BaaS.
 
-    f.  Call the GET API as follows to get payments with a source of 'VISA'
+*  Call the GET API as follows to get payments with a source of 'VISA'
 
 > https://apibaas-trial.apigee.net/{your-org}/finance/payments?ql=select%20*%20where%20sourceType=%27VISA%27
 
@@ -357,7 +353,7 @@ organization name.
 **Note**: Most browsers will URL encode special characters
 automatically
 
-    g.  Try the other query examples provided earlier and use them as the
+*  Try the other query examples provided earlier and use them as the
     value of the ‘ql’ parameter of the GET API call.
 
 ##Summary
