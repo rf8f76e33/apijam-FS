@@ -56,7 +56,7 @@ Postman can be downloaded from: https://www.getpostman.com/
 | [Lab 7 – API Publishing - Developer Portal Customization](./Labs/Core/Lab%207%20API%20Publishing%20-%20Developer%20Portal%20Customization) | 30 mins   |
 | [Lab 8 – Consume APIs](./Labs/Core/Lab%208%20Consume%20APIs)                                                                           | 20 mins   |
 | [Lab 9 – API Analytics - Custom Reports](./Labs/Core/Lab%209%20API%20Analytics%20-%20Custom%20Reports)                                 | 20 mins   |
-| [Lab 10 – Introduction to API BaaS](./Labs/Core/Lab%2010%20Introduction%20to%20API%20BaaS%20(Backend-as-a-Service)      | 30 mins       |
+| [Lab 10 – Introduction to API BaaS](./Labs/Core/Lab%2010%20Introduction%20to%20API%20BaaS%20Backend-as-a-Service)      | 30 mins       |
 
 ### [Appendix Labs](./Labs/Appendix)
 * API Development - Create a RESTful API from a SOAP service
