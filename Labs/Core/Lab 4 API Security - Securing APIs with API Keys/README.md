@@ -219,7 +219,7 @@ In this lab you learned how to protect your API Proxy using the Verify API Key p
 
 # Rate this lab
 
-How did you like this lab? Rate [here](https://goo.gl/forms/XxDqVtWHnyFdEChv1).
+How did you like this lab? Rate [here](https://goo.gl/forms/Ymj9pe9G5Ob5XNd13).
 
 Now go to [Lab-5](./../Lab%205%20Traffic%20Management%20-%20Rate%20Limit%20APIs)
 

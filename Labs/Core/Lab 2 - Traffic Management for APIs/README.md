@@ -391,7 +391,7 @@ cases.
 
 # Rate this lab
 
-How did you like this lab? Rate [here](https://goo.gl/forms/oivm4A6DqBKM9AEJ3).
+How did you like this lab? Rate [here](https://goo.gl/forms/O1CpSFvPohgRJuSj1).
 
 Now go to [Lab-3](./../Lab%203%20API%20Diagnostics%20-%20Trace%20tool)
 

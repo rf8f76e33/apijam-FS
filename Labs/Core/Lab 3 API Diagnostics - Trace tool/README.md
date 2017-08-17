@@ -188,6 +188,6 @@ In this lab, you learned how to diagnose a reported problem with your API in rea
 
 # Rate this lab
 
-How did you link this lab? Rate [here](https://docs.google.com/a/google.com/forms/d/1Rc17-TqTtqfXgOu9SqYbVGyAzssnANftD2Hpspmr1KQ).
+How did you link this lab? Rate [here](https://goo.gl/forms/uIZYd5vKhqo5JmvP2).
 
 Now to go [Lab-4](./../Lab%204%20API%20Security%20-%20Securing%20APIs%20with%20API%20Keys)

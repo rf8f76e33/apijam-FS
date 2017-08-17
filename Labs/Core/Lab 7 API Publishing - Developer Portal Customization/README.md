@@ -137,6 +137,6 @@ That completes this hands-on lesson. In this simple lab you learned how to custo
 
 # Rate this lab
 
-How did you like this lab? Rate [here](https://goo.gl/forms/GvGcxAgV1RTGAV2y1).
+How did you like this lab? Rate [here](https://goo.gl/forms/5V1SDzUoXafmIOUE2).
 
 Now to go [Lab-8](./../Lab%208%20Consume%20APIs)

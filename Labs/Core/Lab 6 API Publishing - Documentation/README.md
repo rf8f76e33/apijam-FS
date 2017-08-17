@@ -132,6 +132,6 @@ You’ve learned how to do the following;
 
 # Rate this lab
 
-How did you link this lab? Rate [here](https://goo.gl/forms/j33WG2U0NFf02QHi1).
+How did you link this lab? Rate [here](https://goo.gl/forms/t0X44Pvw0nt3Kk5o1).
 
 Now go to [Lab-7](./../Lab%207%20API%20Publishing%20-%20Developer%20Portal%20Customization)

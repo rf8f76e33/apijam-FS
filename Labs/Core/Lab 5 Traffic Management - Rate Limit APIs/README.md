@@ -104,6 +104,6 @@ That completes this hands-on lesson. In this simple lab you learned how to apply
 
 # Rate this lab
 
-How did you like this lab? Rate [here](https://goo.gl/forms/BJGUY07XCGboHxrw2).
+How did you like this lab? Rate [here](https://goo.gl/forms/OZe2bxDVW0OnwvNp2).
 
 Now to go [Lab-6](./../Lab%206%20API%20Publishing%20-%20Documentation)

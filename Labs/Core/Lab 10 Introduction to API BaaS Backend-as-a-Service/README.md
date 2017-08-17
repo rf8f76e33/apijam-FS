@@ -376,5 +376,5 @@ searching. For further information refer to the API BaaS
     
 # Rate this lab
 
-How did you like this lab? Rate [here](https://goo.gl/forms/4elHC2g6EuwnBlon1).
+How did you like this lab? Rate [here](https://goo.gl/forms/obedQHDbqXJ4heON2).
 

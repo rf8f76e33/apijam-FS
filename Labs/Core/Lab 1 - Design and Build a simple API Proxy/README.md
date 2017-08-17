@@ -418,7 +418,7 @@ That completes this hands-on lesson. Simple and quick. You learned the fundament
 
 # Rate this lab
 
-How did you like this lab? Rate [here](https://goo.gl/forms/G8LAPkDWVNncR9iw2).
+How did you like this lab? Rate [here](https://goo.gl/forms/bDYkomxIBFsAlXCg1).
 
 Now go to [Lab-2](./../Lab%202%20-%20Traffic%20Management%20for%20APIs)
 

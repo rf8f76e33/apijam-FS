@@ -213,6 +213,6 @@ In this exercise, you learned about custom reports in Apigee Edge. You also adde
 
 # Rate this lab
 
-How did you like this lab? Rate [here](https://goo.gl/forms/4elHC2g6EuwnBlon1).
+How did you like this lab? Rate [here](https://goo.gl/forms/j45c6nx7mpj0PGhF3).
 
 Now go to [Lab-10](./../Lab%2010%20Introduction%20to%20API%20BaaS%20Backend-as-a-Service)
