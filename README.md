@@ -86,8 +86,7 @@ NOTE: You may need to whitelist the following URLs if you have strict internet u
 * \*maps.googleapis.com/\*
 * \*s3.amazonaws.com/\*
 
-
-# Rate the Financial Services AI Jam
+# Rate the Financial Services API Jam
 
 How did you like the API Jam? Rate [here](https://goo.gl/forms/VGaDSozTk6q7pAYJ3).
 
