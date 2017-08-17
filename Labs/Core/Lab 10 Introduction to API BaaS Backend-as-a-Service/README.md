@@ -2,6 +2,8 @@
 
 # Lab 10 - Introduction to API BaaS (Backend-as-a-Service)*
 
+![](./media/image_00.png)
+
 *Duration : 30 mins*
 
 *Persona : API Team*
